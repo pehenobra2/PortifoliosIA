@@ -101,6 +101,9 @@ Os algoritmos genéticos são meta-heurísticas baseadas no processo de seleçã
 
 # Referências
 
-- Russell, S. and Norvig, P., *Artificial Intelligence - A Modern Approach*, 4th ed, Pearson, 2022  
-- [https://www.scielo.br/j/ea/a/c4sqqrthGMS3ngdBhGWtKhh/?format=html](https://doi.org/10.1590/s0103-4014.2021.35101.004)  
-- Silva, D. M., Freitas, V. M., Fernandes Jr, J. R., Uchôa, J. Q., & Schneider, B. de O. (2004). Implementação de uma Biblioteca para Busca Informada e Não-Informada em Espaço de Estados. INFOCOMP Journal of Computer Science, 3(1), 48–61. Disponível em: [INFOCOMP](https://infocomp.dcc.ufla.br/index.php/infocomp/article/view/63)
+RUSSELL, S.; NORVIG, P. *Artificial Intelligence - A Modern Approach*. 4. ed. Pearson, 2022.
+
+SILVA, D. M.; FREITAS, V. M.; FERNANDES JR, J. R.; UCHÔA, J. Q.; SCHNEIDER, B. de O. Implementação de uma biblioteca para busca informada e não-informada em espaço de estados. *INFOCOMP Journal of Computer Science*, v. 3, n. 1, p. 48-61, 2004. Disponível em: <https://infocomp.dcc.ufla.br/index.php/infocomp/article/view/63>. Acesso em: 26 dez. 2024.
+
+SCIELO. Implementação de uma biblioteca para busca informada e não-informada em espaço de estados. Disponível em: <https://www.scielo.br/j/ea/a/c4sqqrthGMS3ngdBhGWtKhh/?format=html>. Acesso em: 26 dez. 2024.
+
