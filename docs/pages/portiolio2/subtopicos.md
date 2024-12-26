@@ -19,7 +19,7 @@
   Busca cega, também conhecida como busca não-informada, é uma estratégia de resolução de problemas que não utiliza conhecimento prévio sobre o ambiente ou o objetivo final. Essas técnicas exploram o espaço de estados de forma sistemática, baseando-se apenas em uma função de enfileiramento para determinar os próximos passos.
     #### 3.1.1 Busca em largura
       Explora todos os estados em um nível antes de avançar para o próximo. É útil para encontrar a solução mais curta, mas consome mais memória.
-      ![Busca em largura](../assets/buscaEmlargura.png)
+      ![Busca em largura](docs/pages/assets/buscaEmLargura.png)
       Figura 1: Nesta figura temos uma demonstração teórica de como funciona a busca em largura.
       
   ### 3.2 Busca informada
