@@ -42,9 +42,15 @@ Com essas informações, o agente pode encontrar a solução ótima.
 
 ---
 
-# 2. Problemas de Malha Aberta e de Malha Fechada
+# 2. Problemas de Malha Aberta e Malha Fechada
 
-Os problemas de malha aberta envolvem um planejamento fixo, sem reagir a mudanças no ambiente durante a execução. Já os problemas de malha fechada permitem ajustes dinâmicos baseados em percepções do ambiente.
+## 2.1 Malha Aberta
+Em um sistema de **malha aberta**, o agente decide qual caminho seguir sem levar em conta o que aconteceu antes, ou seja, sem aprender com os erros ou acertos passados. Ele segue um conjunto de regras ou um plano pronto, sem se ajustar ao que encontra ao longo do caminho. Isso pode funcionar bem em problemas simples, onde é fácil prever a solução e o espaço de busca não é tão grande.
+Porém, o problema é que, sem esse ajuste, o agente não consegue corrigir suas ações conforme vai avançando. Isso pode fazer com que ele tome decisões erradas, seguindo caminhos que não levam à solução ou desperdiçando tempo e recursos. A busca acaba sendo "cega", ou seja, o agente não aprende com a experiência e não consegue melhorar suas escolhas durante o processo.
+
+## 2.2 Malha Fechada
+Por outro lado, em um sistema de **malha fechada** permite que o agente ajuste suas ações com base no feedback que recebe durante o processo de busca. Ou seja, a cada novo estado explorado, o agente pode reavaliar o caminho a seguir, ajustando sua estratégia para otimizar a busca. 
+Embora a **malha fechada** ofereça uma maior flexibilidade e a capacidade de adaptação, ela vem com o custo de maior complexidade computacional. O agente precisa avaliar constantemente os estados e atualizar seu caminho, o que pode demandar mais recusos de processamento.
 
 ---
 
