@@ -69,7 +69,6 @@ A **busca em largura** é um exemplo de busca cega, pois explora os estados sem 
 ![Demonstração da busca em largura](../assets/buscaEmLargura.png)  
 *Figura 1: Demonstração teórica do funcionamento da busca em largura.*
 
----
 
 ## 3.2 Busca Informada
 
@@ -80,7 +79,8 @@ A **busca informada** é uma estratégia que utiliza informação adicional para
 
 A **busca A\*** é um exemplo de busca informada, pois utiliza tanto o custo do caminho já percorrido \( g(n) \) quanto uma estimativa do custo restante para alcançar o objetivo \( h(n) \) para calcular a função de avaliação total \( f(n) = g(n) + h(n) \). Isso a torna mais eficiente, pois, em vez de explorar todos os caminhos igualmente, ela prioriza os nós que têm maior chance de levar à solução com base nessa avaliação.
 
-  
+--- 
+
 # 4. Funções Heurísticas
 
 Funções heurísticas fornecem estimativas sobre o custo ou distância restante para o objetivo, auxiliando algoritmos de busca informada a priorizar estados promissores.
