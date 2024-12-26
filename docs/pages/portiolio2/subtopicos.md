@@ -83,7 +83,7 @@ A **busca A\*** é um exemplo de busca informada, pois utiliza tanto o custo do 
 
 # 4. Funções Heurísticas
 
-Funções heurísticas fornecem estimativas sobre o custo ou distância restante para o objetivo, auxiliando algoritmos de busca informada a priorizar estados promissores.
+Uma **Função Heurística** é uma maneira de estimar quanto tempo ou esforço é necessário para resolver um problema a partir de um ponto específico. Ela pode ser criada com base em exemplos anteriore s de como encontrar soluções, analisando características importantes do problema, como o número de peças fora do lugar em um quebra-cabeças. Essas características são combinadas para fazer uma previsão sobre o custo para alcançar a solução. Embora útil, a heurística não garante que sempre encontrará a solução mais rápida ou mais eficiente.
 
 ---
 
