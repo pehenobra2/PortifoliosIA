@@ -45,12 +45,16 @@ Com essas informações, o agente pode encontrar a solução ótima.
 # 2. Problemas de Malha Aberta e Malha Fechada
 
 ## 2.1 Malha Aberta
+
 Em um sistema de **malha aberta**, o agente decide qual caminho seguir sem levar em conta o que aconteceu antes, ou seja, sem aprender com os erros ou acertos passados. Ele segue um conjunto de regras ou um plano pronto, sem se ajustar ao que encontra ao longo do caminho. Isso pode funcionar bem em problemas simples, onde é fácil prever a solução e o espaço de busca não é tão grande.
+
 Porém, o problema é que, sem esse ajuste, o agente não consegue corrigir suas ações conforme vai avançando. Isso pode fazer com que ele tome decisões erradas, seguindo caminhos que não levam à solução ou desperdiçando tempo e recursos. A busca acaba sendo "cega", ou seja, o agente não aprende com a experiência e não consegue melhorar suas escolhas durante o processo.
 
 ## 2.2 Malha Fechada
-Por outro lado, em um sistema de **malha fechada** permite que o agente ajuste suas ações com base no feedback que recebe durante o processo de busca. Ou seja, a cada novo estado explorado, o agente pode reavaliar o caminho a seguir, ajustando sua estratégia para otimizar a busca. 
-Embora a **malha fechada** ofereça uma maior flexibilidade e a capacidade de adaptação, ela vem com o custo de maior complexidade computacional. O agente precisa avaliar constantemente os estados e atualizar seu caminho, o que pode demandar mais recusos de processamento.
+
+Por outro lado, em um sistema de **malha fechada**, o agente pode ajustar suas ações com base no feedback que recebe durante o processo de busca. A cada novo estado explorado, o agente reavaliará o caminho a seguir, ajustando sua estratégia para otimizar a busca.
+
+Embora a **malha fechada** ofereça maior flexibilidade e capacidade de adaptação, ela exige mais poder de processamento. O agente precisa avaliar constantemente os estados e atualizar seu caminho, o que pode ser mais complexo computacionalmente.
 
 ---
 
@@ -75,7 +79,6 @@ A **busca em largura** é um exemplo de busca cega, pois explora os estados sem 
 ![Demonstração da busca em largura](../assets/buscaEmLargura.png)  
 *Figura 1: Demonstração teórica do funcionamento da busca em largura.*
 
-
 ## 3.2 Busca Informada
 
 A **busca informada** é uma estratégia que utiliza informação adicional para determinar a ordem de expansão dos nós durante o processo de busca. Essa informação, chamada de função de avaliação, ajuda a medir a probabilidade de um nó levar à solução, com base no seu estado atual. As buscas informadas tentam priorizar os nós que têm maior chance de levar à solução de forma mais eficiente.
@@ -85,11 +88,11 @@ A **busca informada** é uma estratégia que utiliza informação adicional para
 
 A **busca A\*** é um exemplo de busca informada, pois utiliza tanto o custo do caminho já percorrido \( g(n) \) quanto uma estimativa do custo restante para alcançar o objetivo \( h(n) \) para calcular a função de avaliação total \( f(n) = g(n) + h(n) \). Isso a torna mais eficiente, pois, em vez de explorar todos os caminhos igualmente, ela prioriza os nós que têm maior chance de levar à solução com base nessa avaliação.
 
---- 
+---
 
 # 4. Funções Heurísticas
 
-Uma **Função Heurística** é uma maneira de estimar quanto tempo ou esforço é necessário para resolver um problema a partir de um ponto específico. Ela pode ser criada com base em exemplos anteriore s de como encontrar soluções, analisando características importantes do problema, como o número de peças fora do lugar em um quebra-cabeças. Essas características são combinadas para fazer uma previsão sobre o custo para alcançar a solução. Embora útil, a heurística não garante que sempre encontrará a solução mais rápida ou mais eficiente.
+Uma **Função Heurística** é uma maneira de estimar quanto tempo ou esforço é necessário para resolver um problema a partir de um ponto específico. Ela pode ser criada com base em exemplos anteriores de como encontrar soluções, analisando características importantes do problema, como o número de peças fora do lugar em um quebra-cabeças. Essas características são combinadas para fazer uma previsão sobre o custo para alcançar a solução. Embora útil, a heurística não garante que sempre encontrará a solução mais rápida ou mais eficiente.
 
 ---
 
@@ -112,4 +115,3 @@ RUSSELL, S.; NORVIG, P. *Artificial Intelligence - A Modern Approach*. 4. ed. Pe
 SILVA, D. M.; FREITAS, V. M.; FERNANDES JR, J. R.; UCHÔA, J. Q.; SCHNEIDER, B. de O. Implementação de uma biblioteca para busca informada e não-informada em espaço de estados. *INFOCOMP Journal of Computer Science*, v. 3, n. 1, p. 48-61, 2004. Disponível em: <https://infocomp.dcc.ufla.br/index.php/infocomp/article/view/63>. Acesso em: 26 dez. 2024.
 
 SCIELO. Implementação de uma biblioteca para busca informada e não-informada em espaço de estados. Disponível em: <https://www.scielo.br/j/ea/a/c4sqqrthGMS3ngdBhGWtKhh/?format=html>. Acesso em: 26 dez. 2024.
-
