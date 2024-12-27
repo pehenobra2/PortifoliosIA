@@ -98,20 +98,78 @@ Uma **Função Heurística** é uma maneira de estimar quanto tempo ou esforço 
 
 # 5. Busca em Ambientes Complexos
 
-A busca em ambientes complexos envolve desafios como incertezas, dinamismo e grande escala do espaço de estados. Nesses cenários, abordagens adaptativas e distribuídas podem ser necessárias.
+Os algoritmos de busca local oferecem uma alternativa eficiente aos métodos sistemáticos, especialmente em problemas onde o caminho até o objetivo é irrelevante. Exemplos incluem o problema das oito rainhas e diversas aplicações de otimização, como roteamento de veículos e gerenciamento de carteiras. Em vez de explorar todos os caminhos possíveis, esses algoritmos concentram-se em um único estado atual, movendo-se apenas para os estados vizinhos que maximizem ou minimizem uma função objetivo.
+
+## 5.1 Vantagens da Busca Local
+
+- **Baixo consumo de memória:** Apenas o estado atual é armazenado, reduzindo drasticamente o uso de recursos computacionais.
+- **Adequação a grandes espaços de estados:** Funciona bem em problemas contínuos ou de larga escala, onde métodos sistemáticos são inviáveis.
+
+A busca local é particularmente útil em problemas de otimização, onde o objetivo é identificar o melhor estado, conforme definido por uma função objetivo. A topologia do espaço de estados é crucial nesse processo, com cada estado representado por uma posição e uma "elevação" que reflete o custo ou o valor associado.
+
+Algoritmos completos e ótimos são capazes de identificar objetivos ou alcançar valores extremos globais, seja um mínimo ou máximo, dependendo da formulação do problema. Por isso, a busca local é amplamente aplicada em áreas que demandam simplicidade e eficiência, como design de circuitos, escalonamento de tarefas e otimização de redes.
+
+## 5.2 Busca de Subida de Encosta
+
+A busca de subida de encosta é um algoritmo local que ajusta o estado atual para o vizinho com o melhor valor da função objetivo, movendo-se continuamente "encosta acima". O algoritmo termina quando não há vizinhos com valores superiores, indicando que alcançou um ponto de estabilidade.
+
+### 5.2.1 Problemas Comuns
+
+- **Máximos Locais:** O algoritmo pode parar em picos que não são a solução ideal, pois não consegue retroceder para explorar outras opções.
+- **Cumes:** Regiões onde é necessário descer momentaneamente para alcançar soluções melhores, mas a busca não permite movimentos retrógrados.
+- **Platôs:** Áreas planas onde todos os vizinhos têm o mesmo valor, tornando o progresso difícil e frequentemente levando à estagnação.
+
+Apesar de suas limitações, a busca de subida de encosta é um método simples e eficiente em cenários onde o espaço de estados é bem definido e os problemas de interrupção são minimizados.
 
 ---
 
 # 6. Algoritmos Genéticos
 
-Os algoritmos genéticos são meta-heurísticas baseadas no processo de seleção natural. Eles iteram através de gerações para encontrar soluções aproximadas para problemas complexos, utilizando operações como cruzamento e mutação.
+Os algoritmos genéticos (AGs) são métodos de busca inspirados na teoria da evolução natural, propostos por Holland na década de 1970. Eles pertencem à classe dos algoritmos evolucionários, utilizando conceitos da genética e seleção natural para encontrar soluções próximas do ideal para problemas complexos e de difícil solução computacional (ZINI, 2009; ROMERO, 2005).
 
+## 6.1 Funcionamento Básico
+
+Os AGs operam sobre uma população de indivíduos, onde cada indivíduo representa uma solução potencial para o problema em questão. Esses indivíduos são codificados geralmente como cadeias de bits ou sequências numéricas, análogas a cromossomos. O algoritmo segue os seguintes passos:
+
+1. **Inicialização:** Uma população inicial é gerada, geralmente de forma aleatória.
+2. **Avaliação:** Cada indivíduo é avaliado por uma função de adaptação (fitness), que mede a qualidade da solução.
+3. **Seleção:** Indivíduos mais adaptados são selecionados para reprodução, com base na qualidade da função de adaptação.
+4. **Reprodução:** Os indivíduos selecionados passam por operações genéticas, como:
+   - **Cruzamento (crossover):** Combinação de genes de dois pais para criar descendentes.
+   - **Mutação:** Pequenas alterações aleatórias nos genes para explorar novas áreas do espaço de soluções.
+5. **Substituição:** A nova geração substitui a antiga, e o processo é repetido até atingir um critério de parada, como alcançar uma solução aceitável ou um número máximo de gerações (RUSSELL e NORVIG, 2022; ZINI, 2009).
+
+## 6.2 Vantagens
+
+- **Exploração de grandes espaços de busca:** Graças ao uso de populações e operações genéticas, os AGs exploram amplamente o espaço de soluções.
+- **Capacidade de escapar de ótimos locais:** Operações de mutação permitem explorar regiões não alcançadas por métodos locais.
+- **Flexibilidade:** Podem ser aplicados a diversos tipos de problemas com funções objetivo complexas.
+
+## 6.3 Limitações
+
+- **Convergência prematura:** Pode ocorrer caso a diversidade populacional se perca rapidamente, limitando a exploração.
+- **Dependência de parâmetros:** O desempenho depende da escolha de parâmetros como tamanho da população, taxa de mutação e crossover.
+
+## 6.4 Problema das 8 damas
+
+O problema das oito damas consiste em posiscionar oito damas em um tabuleiro de xadrez, de forma que nenhuma dama ataque a outra. É um problema clássico de otimização combinatória, ideal para aplicação de algoritmos genéticos.
+
+   ### 6.4.1 Etapas do algoritmo genético
+   1. **Representação**: Cada solução (indivíduo) é representada como um vetor de 8 posições, indicando as linhas das damas em cada coluna.
+   2. Avaliação: A função de adaptação calcula a qualidade de cada solução com base no número de pares de damas não atacantes, sendo 28 o número ideal.
+   3. Seleção: Indivíduos mais aptos são escolhidos para reprodução, com base em sua qualidade (função de aptidão).
+   4. Cruzamento: Dois indivíduos são combinados para criar novos descendentes, trocando partes de suas representações.
+   5. Mutação: Algumas soluções passam por mutações aleatórias, alterando a posição de uma dama.
+   6. Substituição: A população é atualizada com os novos indivíduos, e o processo se repete até encontrar uma solução ótima ou satisfatória.
+
+Esse processo permite explorar o espaço de soluções de forma eficaz e encontrar soluções próximas ao ideal, resolvendo problemas complexos de otimização como o das oito damas.
+   
 ---
 
 # Referências
 
-RUSSELL, S.; NORVIG, P. *Artificial Intelligence - A Modern Approach*. 4. ed. Pearson, 2022.
-
-SILVA, D. M.; FREITAS, V. M.; FERNANDES JR, J. R.; UCHÔA, J. Q.; SCHNEIDER, B. de O. Implementação de uma biblioteca para busca informada e não-informada em espaço de estados. *INFOCOMP Journal of Computer Science*, v. 3, n. 1, p. 48-61, 2004. Disponível em: <https://infocomp.dcc.ufla.br/index.php/infocomp/article/view/63>. Acesso em: 26 dez. 2024.
-
-SCIELO. Implementação de uma biblioteca para busca informada e não-informada em espaço de estados. Disponível em: <https://www.scielo.br/j/ea/a/c4sqqrthGMS3ngdBhGWtKhh/?format=html>. Acesso em: 26 dez. 2024.
+- RUSSELL, S.; NORVIG, P. *Artificial Intelligence - A Modern Approach*. 4. ed. Pearson, 2022.
+- TEIXEIRA, Otávio Noura et al. Algoritmo genético com interação social na resolução de problemas de otimização global com restrições. Editora OMNIPAX, v. 197, p. 223, 2011.
+- ZINI, Érico de Oliveira Costa. Algoritmo genético especializado na resolução de problemas com variáveis contínuas e altamente restritos. 2009.
+- SILVA, D. M.; FREITAS, V. M.; FERNANDES JR, J. R.; UCHÔA, J. Q.; SCHNEIDER, B. de O. Implementação de uma biblioteca para busca informada e não-informada em espaço de estados. *INFOCOMP Journal of Computer Science*, v. 3, n. 1, p. 48-61, 2004. Disponível em: <https://infocomp.dcc.ufla.br/index.php/infocomp/article/view/63>. Acesso em: 26 dez. 2024.
+- SCIELO. Implementação de uma biblioteca para busca informada e não-informada em espaço de estados. Disponível em: <https://www.scielo.br/j/ea/a/c4sqqrthGMS3ngdBhGWtKhh/?format=html>. Acesso em: 26 dez. 2024.
