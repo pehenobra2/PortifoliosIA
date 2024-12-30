@@ -116,7 +116,7 @@ def calcular_fitness(alocacao: list) -> float:
         return -np.inf
     return retorno_esperado / risco
 ```
-### algoritmoGenetico.py
+### `algoritmoGenetico.py`
 ```python
 import random
 import numpy as np
@@ -235,7 +235,7 @@ def algoritmo_genetico(tamanho_populacao: int, num_geracoes: int, taxa_mutacao: 
     return melhor_individuo
 ```
 
-### data.py
+### `data.py`
 ```python
 import pandas as pd
 
