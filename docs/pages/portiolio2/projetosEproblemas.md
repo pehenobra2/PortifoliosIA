@@ -265,3 +265,15 @@ def get_matriz_covariancia():
 
 ![Resultado](../assets/resultado.png)  
 *Figura 1: Resultado.*
+
+A execução do algoritmo genético resultou na alocação ótima de ativos. O processo foi realizado ao longo de 5 gerações, com as métricas de fitness sendo avaliadas em cada geração. O fitness é calculado como a razão entre o retorno esperado e o risco (volatilidade) do portfólio.
+
+Durante o processo de evolução, observamos que o melhor fitness aumentou progressivamente, indicando uma melhoria na qualidade da solução ao longo das gerações. A cada geração, o algoritmo selecionava as melhores alocações, cruzava e aplicava mutação, o que resultou em uma melhoria contínua.
+
+Ao final de 5 gerações, a melhor alocação de ativos foi:
+[0.4423, 0.2763, 0.2813]
+
+O fitness da melhor alocação foi de 2.9248, o que representa a razão otimizada entre retorno e risco para o portfólio. Isso significa que, com esta alocação, o portfólio atinge um bom equilíbrio entre risco e retorno esperado.
+
+O gráfico (Figura 1) ilustra a evolução do fitness ao longo das gerações, mostrando o crescimento da solução à medida que o algoritmo avançava.
+
