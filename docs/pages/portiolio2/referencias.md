@@ -15,3 +15,5 @@
 - PACHECO, Marco Aurélio Cavalcanti et al. Algoritmos genéticos: princípios e aplicações. ICA: Laboratório de Inteligência Computacional Aplicada. Departamento de Engenharia Elétrica. Pontifícia Universidade Católica do Rio de Janeiro. Fonte desconhecida, v. 28, 1999.
 
 - WUERGES, Artur Filipe Ewald; BORBA, José Alonso. Redes neurais, lógica nebulosa e algoritmos genéticos: aplicações e possibilidades em finanças e contabilidade. *JISTEM - Journal of Information Systems and Technology Management*, São Paulo, v. 7, p. 163-182, 2010.
+
+- POMPERMAYER, Mateus Platinetty et al. Uso de algoritmo genético para análise de trajetos e percursos. Revista de Ubiquidade, v. 5, n. 2, p. 1-13, 2022.
