@@ -263,4 +263,5 @@ def get_matriz_covariancia():
 ```
 ## Resultado
 
-foto
+![Resultado](../assets/resultado.png)  
+*Figura 1: Resultado.*
