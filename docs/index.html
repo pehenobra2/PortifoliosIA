@@ -83,25 +83,62 @@
       </div>
     </div>
 
+    <div class="container">
+      <!-- Header Section -->
+      <header>
+        <h1>Inteligência Artificial</h1>
+      </header>
+
+      <!-- Aluno Section -->
+      <div class="section">
+        <h2>1. Aluno</h2>
+        <p><strong>Aluno:</strong> Pedro Henrique Nogueira Bragança</p>
+        <p><strong>Matrícula:</strong> 190094478</p>
+      </div>
+
+      <!-- Sobre a Disciplina Section -->
+      <div class="section">
+        <h2>2. Sobre a Disciplina</h2>
+        <p>A disciplina de Inteligência Artificial visa introduzir os conceitos fundamentais para a representação do conhecimento, resolução de problemas e métodos de aprendizagem, preparando os alunos para o desenvolvimento de sistemas inteligentes.</p>
+      </div>
+
+      <!-- Conteúdos Section -->
+      <div class="section" id="conteudos">
+        <h2>3. Conteúdos</h2>
+        <h3>3.1 Introdução à inteligência artificial</h3>
+        <h3>3.2 Resolução de problemas de busca</h3>
+        <h3>3.3 Problemas de satisfação de condições</h3>
+        <h3>3.4 Agentes lógicos</h3>
+        <h3>3.5 Quantificação de incertezas e redes Bayesianas</h3>
+        <h3>3.6 Aprendizado de máquina</h3>
+      </div>
+
     <script>
       // Função para carregar e exibir arquivos Markdown
       function loadMarkdown(file) {
+        // Verifica o arquivo e carrega o Markdown
         fetch(file)
           .then(response => {
             if (!response.ok) {
-              throw new Error('Arquivo não encontrado');
+              throw new Error(`Erro ${response.status}: Arquivo não encontrado`);
             }
             return response.text();
           })
           .then(markdown => {
             const converter = new showdown.Converter();
             const html = converter.makeHtml(markdown);
-            document.getElementById('content').innerHTML = html;
+            document.getElementById('content').innerHTML = html; // Insere o conteúdo convertido
           })
           .catch(error => {
+            console.error(error);
             document.getElementById('content').innerHTML = `<p>Erro ao carregar conteúdo: ${error.message}</p>`;
           });
       }
+
+      // Carrega o primeiro arquivo automaticamente
+      window.onload = () => {
+        loadMarkdown('portifolio2/ImpressoesIniciais.md');
+      };
     </script>
   </body>
 </html>
