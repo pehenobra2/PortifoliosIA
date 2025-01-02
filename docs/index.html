@@ -11,9 +11,9 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
-    <!-- Custom Styles -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+
     <style>
-      /* Global styles */
       body {
         font-family: 'Roboto', sans-serif;
         margin: 0;
@@ -23,123 +23,85 @@
         line-height: 1.6;
       }
 
-      h1, h2, h3 {
-        font-family: 'Poppins', sans-serif;
-        color: #2c3e50;
-        margin-bottom: 0.5rem;
+      .sidebar {
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: #2c3e50;
+        color: white;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
       }
 
-      h1 {
-        font-size: 2.5rem;
-        margin-top: 20px;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-        margin-top: 15px;
-      }
-
-      h3 {
-        font-size: 1.4rem;
-        margin-top: 10px;
-        color: #34495e;
-      }
-
-      p {
+      .sidebar a {
+        color: #ecf0f1;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 10px;
         font-size: 1.1rem;
-        margin-bottom: 1rem;
       }
 
-      ul {
-        list-style-type: none;
-        padding-left: 0;
+      .sidebar a:hover {
+        color: #3498db;
       }
 
-      li {
-        margin-bottom: 0.5rem;
-      }
-
-      /* Card-like section styling */
-      .section {
-        background-color: #ffffff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        margin: 20px;
+      .container {
+        margin-left: 270px;
         padding: 20px;
       }
 
-      .section:nth-child(odd) {
-        background-color: #ecf0f1;
-      }
-
-      .highlight {
-        color: #e74c3c;
-        font-weight: bold;
-      }
-
-      /* Links */
-      a {
-        color: #3498db;
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      /* Footer styling */
-      footer {
-        background-color: #2c3e50;
-        color: #ffffff;
-        padding: 10px;
-        text-align: center;
-      }
-
-      footer a {
-        color: #ecf0f1;
-      }
-
-      footer a:hover {
-        text-decoration: underline;
+      .markdown-content {
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
       }
     </style>
   </head>
 
   <body>
-    <div class="container">
-      <!-- Header Section -->
-      <header>
-        <h1>Inteligência Artificial</h1>
-      </header>
-
-      <!-- Aluno Section -->
-      <div class="section">
-        <h2>1. Aluno</h2>
-        <p><strong>Aluno:</strong> Pedro Henrique Nogueira Bragança</p>
-        <p><strong>Matrícula:</strong> 190094478</p>
-      </div>
-
-      <!-- Sobre a Disciplina Section -->
-      <div class="section">
-        <h2>2. Sobre a Disciplina</h2>
-        <p>A disciplina de Inteligência Artificial visa introduzir os conceitos fundamentais para a representação do conhecimento, resolução de problemas e métodos de aprendizagem, preparando os alunos para o desenvolvimento de sistemas inteligentes.</p>
-      </div>
-
-      <!-- Conteúdos Section -->
-      <div class="section">
-        <h2>3. Conteúdos</h2>
-        <h3>3.1 Introdução à inteligência artificial</h3>
-        <h3>3.2 Resolução de problemas de busca</h3>
-        <h3>3.3 Problemas de satisfação de condições</h3>
-        <h3>3.4 Agentes lógicos</h3>
-        <h3>3.5 Quantificação de incertezas e redes Bayesianas</h3>
-        <h3>3.6 Aprendizado de máquina</h3>
-      </div>
-
-      <!-- Footer Section -->
-      <footer>
-        <p>Desenvolvido por <a href="https://github.com/fga-eps-mds/GFour-Invext" target="_blank">GFour-Invext</a> | <a href="https://www.unb.br" target="_blank">Universidade de Brasília</a></p>
-      </footer>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Menu</h2>
+      <!-- Links para os arquivos Markdown -->
+      <a href="#" onclick="loadMarkdown('portifolio2/ImpressoesIniciais.md')">Impressões Iniciais</a>
+      <a href="#" onclick="loadMarkdown('portifolio2/subtopicos.md')">Subtópicos</a>
+      <a href="#" onclick="loadMarkdown('portifolio2/discussoes.md')">Discussões</a>
+      <a href="#" onclick="loadMarkdown('portifolio2/projetosEproblemas.md')">Projeto e problemas</a>
+      <a href="#" onclick="loadMarkdown('portifolio2/conclusao.md')">Conclusão</a>
+      <a href="#" onclick="loadMarkdown('portifolio2/referencias.md')">Referências</a>
     </div>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div id="content" class="markdown-content">
+        <!-- O conteúdo do Markdown será carregado aqui -->
+        <p>Bem-vindo à disciplina de Inteligência Artificial!</p>
+      </div>
+    </div>
+
+    <script>
+      // Função para carregar e exibir arquivos Markdown
+      function loadMarkdown(file) {
+        fetch(file)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Arquivo não encontrado');
+            }
+            return response.text();
+          })
+          .then(markdown => {
+            const converter = new showdown.Converter();
+            const html = converter.makeHtml(markdown);
+            document.getElementById('content').innerHTML = html;
+          })
+          .catch(error => {
+            document.getElementById('content').innerHTML = `<p>Erro ao carregar conteúdo: ${error.message}</p>`;
+          });
+      }
+    </script>
   </body>
 </html>
