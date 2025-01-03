@@ -1,12 +1,12 @@
-# 1. Agentes de Solução de Problemas
+# Agentes de Solução de Problemas
 
-## 1.1 Objetivos
+## Objetivos
 
 Agentes inteligentes buscam maximizar seu desempenho, o que é alcançado ao definir objetivos claros e específicos. Esses objetivos ajudam a simplificar a tomada de decisão, permitindo que o agente filtre as ações mais relevantes para alcançar o resultado desejado.
 
 **Exemplo:** Em uma viagem de férias saindo de Goiânia, o agente pode definir como objetivo chegar a Brasília. Com esse objetivo em mente, ele pode focar apenas nas rotas que levam à capital federal, tornando a escolha da estrada mais eficiente.
 
-## 1.2 Formulação de Problemas
+## Formulação de Problemas
 
 Para alcançar seus objetivos, o agente precisa formular o problema de maneira eficaz, selecionando as ações e estados mais adequados para a solução.
 
@@ -16,7 +16,7 @@ Para alcançar seus objetivos, o agente precisa formular o problema de maneira e
 
 A formulação do problema envolve decidir quais ações e estados são relevantes para alcançar o objetivo de forma eficiente, ignorando detalhes irrelevantes.
 
-## 1.3 Busca e Execução
+## Busca e Execução
 
 A resolução de problemas por um agente envolve:
 1. Um **processo de busca** para encontrar uma sequência de ações que o conduza ao objetivo.
@@ -24,7 +24,7 @@ A resolução de problemas por um agente envolve:
 
 **Exemplo:** Durante a viagem de Goiânia a Brasília, o agente precisa buscar a melhor rota e, após identificá-la, segui-la rigidamente. Esse comportamento caracteriza um sistema de malha aberta, onde o agente não reage a mudanças no ambiente.
 
-## 1.4 Definindo Problemas
+## Definindo Problemas
 
 A formulação de um problema pode ser descrita por cinco componentes principais:
 
@@ -42,15 +42,15 @@ Com essas informações, o agente pode encontrar a solução ótima.
 
 ---
 
-# 2. Problemas de Malha Aberta e Malha Fechada
+# Problemas de Malha Aberta e Malha Fechada
 
-## 2.1 Malha Aberta
+## Malha Aberta
 
 Em um sistema de **malha aberta**, o agente decide qual caminho seguir sem levar em conta o que aconteceu antes, ou seja, sem aprender com os erros ou acertos passados. Ele segue um conjunto de regras ou um plano pronto, sem se ajustar ao que encontra ao longo do caminho. Isso pode funcionar bem em problemas simples, onde é fácil prever a solução e o espaço de busca não é tão grande.
 
 Porém, o problema é que, sem esse ajuste, o agente não consegue corrigir suas ações conforme vai avançando. Isso pode fazer com que ele tome decisões erradas, seguindo caminhos que não levam à solução ou desperdiçando tempo e recursos. A busca acaba sendo "cega", ou seja, o agente não aprende com a experiência e não consegue melhorar suas escolhas durante o processo.
 
-## 2.2 Malha Fechada
+## Malha Fechada
 
 Por outro lado, em um sistema de **malha fechada**, o agente pode ajustar suas ações com base no feedback que recebe durante o processo de busca. A cada novo estado explorado, o agente reavaliará o caminho a seguir, ajustando sua estratégia para otimizar a busca.
 
@@ -58,15 +58,15 @@ Embora a **malha fechada** ofereça maior flexibilidade e capacidade de adaptaç
 
 ---
 
-# 3. Algoritmos de Busca
+# Algoritmos de Busca
 
 Os algoritmos de busca são fundamentais para a resolução de problemas em inteligência artificial, permitindo que um agente encontre uma sequência de ações que o leve ao seu objetivo. Eles exploram um **espaço de estados**, o conjunto de todas as possíveis situações que o agente pode encontrar durante sua tarefa.
 
-## 3.1 Busca Cega
+## Busca Cega
 
 A **busca cega**, também conhecida como **busca não-informada**, é uma estratégia que não utiliza conhecimento prévio sobre o ambiente ou o objetivo final. Essas técnicas exploram o espaço de estados de forma sistemática, baseando-se apenas em uma função de enfileiramento para determinar os próximos passos.
 
-### 3.1.1 Busca em Largura
+### Busca em Largura
 
 A **busca em largura** é um exemplo de busca cega, pois explora os estados sem utilizar informações sobre a solução, baseando-se apenas na ordem de geração dos estados. Ela explora todos os estados de um nível antes de avançar para o próximo. Essa abordagem é eficaz para encontrar a solução mais curta, mas pode consumir muita memória, já que armazena todos os estados do nível atual.
 
@@ -79,7 +79,7 @@ A **busca em largura** é um exemplo de busca cega, pois explora os estados sem 
 ![Demonstração da busca em largura](../assets/buscaEmLargura.png)  
 *Figura 1: Demonstração teórica do funcionamento da busca em largura.*
 
-## 3.2 Busca Informada
+## Busca Informada
 
 A **busca informada** é uma estratégia que utiliza informação adicional para determinar a ordem de expansão dos nós durante o processo de busca. Essa informação, chamada de função de avaliação, ajuda a medir a probabilidade de um nó levar à solução, com base no seu estado atual. As buscas informadas tentam priorizar os nós que têm maior chance de levar à solução de forma mais eficiente.
 
@@ -90,17 +90,17 @@ A **busca A\*** é um exemplo de busca informada, pois utiliza tanto o custo do 
 
 ---
 
-# 4. Funções Heurísticas
+# Funções Heurísticas
 
 Uma **Função Heurística** é uma maneira de estimar quanto tempo ou esforço é necessário para resolver um problema a partir de um ponto específico. Ela pode ser criada com base em exemplos anteriores de como encontrar soluções, analisando características importantes do problema, como o número de peças fora do lugar em um quebra-cabeças. Essas características são combinadas para fazer uma previsão sobre o custo para alcançar a solução. Embora útil, a heurística não garante que sempre encontrará a solução mais rápida ou mais eficiente.
 
 ---
 
-# 5. Busca em Ambientes Complexos
+# Busca em Ambientes Complexos
 
 Os algoritmos de busca local oferecem uma alternativa eficiente aos métodos sistemáticos, especialmente em problemas onde o caminho até o objetivo é irrelevante. Exemplos incluem o problema das oito rainhas e diversas aplicações de otimização, como roteamento de veículos e gerenciamento de carteiras. Em vez de explorar todos os caminhos possíveis, esses algoritmos concentram-se em um único estado atual, movendo-se apenas para os estados vizinhos que maximizem ou minimizem uma função objetivo.
 
-## 5.1 Vantagens da Busca Local
+## Vantagens da Busca Local
 
 - **Baixo consumo de memória:** Apenas o estado atual é armazenado, reduzindo drasticamente o uso de recursos computacionais.
 - **Adequação a grandes espaços de estados:** Funciona bem em problemas contínuos ou de larga escala, onde métodos sistemáticos são inviáveis.
@@ -109,11 +109,11 @@ A busca local é particularmente útil em problemas de otimização, onde o obje
 
 Algoritmos completos e ótimos são capazes de identificar objetivos ou alcançar valores extremos globais, seja um mínimo ou máximo, dependendo da formulação do problema. Por isso, a busca local é amplamente aplicada em áreas que demandam simplicidade e eficiência, como design de circuitos, escalonamento de tarefas e otimização de redes.
 
-## 5.2 Busca de Subida de Encosta
+## Busca de Subida de Encosta
 
 A busca de subida de encosta é um algoritmo local que ajusta o estado atual para o vizinho com o melhor valor da função objetivo, movendo-se continuamente "encosta acima". O algoritmo termina quando não há vizinhos com valores superiores, indicando que alcançou um ponto de estabilidade.
 
-### 5.2.1 Problemas Comuns
+### Problemas Comuns
 
 - **Máximos Locais:** O algoritmo pode parar em picos que não são a solução ideal, pois não consegue retroceder para explorar outras opções.
 - **Cumes:** Regiões onde é necessário descer momentaneamente para alcançar soluções melhores, mas a busca não permite movimentos retrógrados.
@@ -123,11 +123,11 @@ Apesar de suas limitações, a busca de subida de encosta é um método simples 
 
 ---
 
-# 6. Algoritmos Genéticos
+# Algoritmos Genéticos
 
 Os algoritmos genéticos (AGs) são métodos de busca inspirados na teoria da evolução natural, propostos por Holland na década de 1970. Eles pertencem à classe dos algoritmos evolucionários, utilizando conceitos da genética e seleção natural para encontrar soluções próximas do ideal para problemas complexos e de difícil solução computacional (ZINI, 2009; ROMERO, 2005).
 
-## 6.1 Funcionamento Básico
+## Funcionamento Básico
 
 Os AGs operam sobre uma população de indivíduos, onde cada indivíduo representa uma solução potencial para o problema em questão. Esses indivíduos são codificados geralmente como cadeias de bits ou sequências numéricas, análogas a cromossomos. O algoritmo segue os seguintes passos:
 
@@ -139,22 +139,22 @@ Os AGs operam sobre uma população de indivíduos, onde cada indivíduo represe
    - **Mutação:** Pequenas alterações aleatórias nos genes para explorar novas áreas do espaço de soluções.
 5. **Substituição:** A nova geração substitui a antiga, e o processo é repetido até atingir um critério de parada, como alcançar uma solução aceitável ou um número máximo de gerações (RUSSELL e NORVIG, 2022; ZINI, 2009).
 
-## 6.2 Vantagens
+## Vantagens
 
 - **Exploração de grandes espaços de busca:** Graças ao uso de populações e operações genéticas, os AGs exploram amplamente o espaço de soluções.
 - **Capacidade de escapar de ótimos locais:** Operações de mutação permitem explorar regiões não alcançadas por métodos locais.
 - **Flexibilidade:** Podem ser aplicados a diversos tipos de problemas com funções objetivo complexas.
 
-## 6.3 Limitações
+## Limitações
 
 - **Convergência prematura:** Pode ocorrer caso a diversidade populacional se perca rapidamente, limitando a exploração.
 - **Dependência de parâmetros:** O desempenho depende da escolha de parâmetros como tamanho da população, taxa de mutação e crossover.
 
-## 6.4 Problema das 8 damas
+## Problema das 8 damas
 
 O problema das oito damas consiste em posiscionar oito damas em um tabuleiro de xadrez, de forma que nenhuma dama ataque a outra. É um problema clássico de otimização combinatória, ideal para aplicação de algoritmos genéticos.
 
-   ### 6.4.1 Etapas do algoritmo genético
+   ### Etapas do algoritmo genético
    1. **Representação**: Cada solução (indivíduo) é representada como um vetor de 8 posições, indicando as linhas das damas em cada coluna.
    2. Avaliação: A função de adaptação calcula a qualidade de cada solução com base no número de pares de damas não atacantes, sendo 28 o número ideal.
    3. Seleção: Indivíduos mais aptos são escolhidos para reprodução, com base em sua qualidade (função de aptidão).
