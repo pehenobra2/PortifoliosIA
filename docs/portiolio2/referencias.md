@@ -1,3 +1,9 @@
+---
+id: referencias
+layout: default
+title: "Referências - Portfólio 2"
+---
+
 # Referências
 
 - DE MIRANDA, Márcio Nunes. Algoritmos genéticos: fundamentos e aplicações [em linha]. 2007.
