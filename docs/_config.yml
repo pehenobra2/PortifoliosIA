@@ -7,15 +7,18 @@ theme: jekyll-theme-minimal
 
 # Sidebar
 sidebar:
-  - label: Portfólio
+  - label: "Portfólio 1"
     children:
-      - introducao-ia
-      - resolucao-problemas
-  - label: Outros
+      - "portifolio1/video"
+  - label: "Portfólio 2"
     children:
-      - aplicacoes-geneticos
-      - conclusao
-
+      - "portiolio2/ImpressoesIniciais"
+      - "portiolio2/subtopicos"
+      - "portiolio2/discussoes"
+      - "portiolio2/projetosEproblemas"
+      - "portiolio2/conclusao"
+      - "portiolio2/referencias"
+      
 # Configuração de navegação
 plugins:
   - jekyll-titles-from-headings # Gera títulos automaticamente a partir dos cabeçalhos
