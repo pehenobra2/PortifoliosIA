@@ -1,8 +1,3 @@
----
-id: subtopicos
-layout: default
-title: "Subtópicos - Portfólio 2"
----
 
 # Agentes de Solução de Problemas
 
