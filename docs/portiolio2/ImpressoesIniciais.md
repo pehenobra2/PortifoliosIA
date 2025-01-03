@@ -1,7 +1,6 @@
 ---
-id: resolucao-problemas
-title: Resolução de Problemas
-sidebar_label: Resolução de Problemas
+layout: default
+title: "Impressões Iniciais - Portfólio 2"
 ---
 
 # Impressões iniciais
