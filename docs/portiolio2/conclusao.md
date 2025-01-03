@@ -1,3 +1,9 @@
+---
+id: conclusao
+layout: default
+title: "Conclusão - Portfólio 2"
+---
+
 # Conclusão
 
 A inteligência artificial, com suas técnicas e algoritmos, proporciona ferramentas poderosas para resolver problemas complexos, como a otimização em contextos financeiros. Agentes inteligentes são fundamentais em soluções automatizadas, capazes de realizar buscas e executar tarefas com base em objetivos definidos. Eles aplicam algoritmos de busca, como a busca cega e informada, para alcançar soluções eficientes.
