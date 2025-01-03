@@ -1,8 +1,4 @@
----
-id: discussoes
-layout: default
-title: "Discussões - Portfólio 2"
----
+
 
 # **Aplicações dos Algoritmos Genéticos**
 
