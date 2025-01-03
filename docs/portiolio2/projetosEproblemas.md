@@ -1,3 +1,9 @@
+---
+id: projetosEproblemas
+layout: default
+title: "Projetos e problemas - Portfólio 2"
+---
+
 # Algoritmo Genético para Alocação de Ativos
 
 Este projeto utiliza um **algoritmo genético** para otimizar a alocação de ativos em um portfólio financeiro, visando maximizar a razão entre o retorno e o risco (volatilidade). O algoritmo considera a alocação de 3 ativos financeiros e usa dados históricos para calcular o retorno esperado e a volatilidade do portfólio.
