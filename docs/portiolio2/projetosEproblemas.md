@@ -1,8 +1,4 @@
----
-id: projetosEproblemas
-layout: default
-title: "Projetos e problemas - Portfólio 2"
----
+
 
 # Algoritmo Genético para Alocação de Ativos
 
