@@ -10,7 +10,7 @@
   - [Impressões Iniciais](./portiolio2/ImpressoesIniciais.md)
   - [Subtópicos](./portiolio2/subtopicos.md)
     - [Agentes de solução de problemas](./portiolio2/subtopicos.md#agentes-de-solução-de-problemas)
-    - [Problemas de malha aberta e malha fechada](./portiolio2/subtopicos.md#problema-de-malha-aberta-e-malha-fechada)
+    - [Problemas de malha aberta e malha fechada](./portiolio2/subtopicos.md#problemas-de-malha-aberta-e-malha-fechada)
     - [Algoritmos de busca](./portiolio2/subtopicos.md#algoritmos-de-busca)
     - [Funções heurísticas](./portiolio2/subtopicos.md#funções-heurísticas)
     - [Busca em ambientes complexos](./portiolio2/subtopicos.md#busca-em-ambientes-complexos)
