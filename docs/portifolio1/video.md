@@ -1,7 +1,6 @@
 ---
-id: introducao-ia
-title: Introdução à Inteligência Artificial
-sidebar_label: Introdução
+layout: default
+title: "Vídeo - Portfólio 1"
 ---
 
 # Introdução a Inteligência Artifícial
