@@ -4,6 +4,7 @@ description: Documentação sobre IA usando o Zendesk Garden Jekyll Theme
 baseurl: "" # Deixe vazio para GitHub Pages no nível raiz
 url: "https://pehenobra2.github.io/PortifoliosIA/"
 theme: jekyll-theme-minimal
+remote_theme: zendesk/jekyll-theme-zendesk-garden@main
 
 # Sidebar
 sidebar:
@@ -20,6 +21,11 @@ sidebar:
       - referencias
 
       
-# Configuração de navegação
 plugins:
-  - jekyll-titles-from-headings # Gera títulos automaticamente a partir dos cabeçalhos
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-titles-from-headings
+
+# Outras configurações
+verbose: true
