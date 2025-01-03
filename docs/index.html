@@ -12,9 +12,13 @@
     
     <script>
       window.$docsify = {
-        loadSidebar: true
+        loadSidebar: true,
+        plugins: [
+          DocsifySidebarCollapse.plugin() 
+        ]
       };
     </script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   </body>
 </html>
