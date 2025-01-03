@@ -1,4 +1,10 @@
-## **Aplicações dos Algoritmos Genéticos**
+---
+id: discussoes
+layout: default
+title: "Discussões - Portfólio 2"
+---
+
+# **Aplicações dos Algoritmos Genéticos**
 
 Os algoritmos genéticos (AGs) são ferramentas poderosas inspiradas nos processos de evolução natural e seleção biológica. Eles são amplamente utilizados para resolver problemas complexos de otimização, onde métodos tradicionais frequentemente falham devido à alta dimensionalidade, múltiplos critérios conflitantes ou superfícies de solução irregulares. Sua flexibilidade permite que sejam aplicados em diversas áreas científicas, industriais e tecnológicas, oferecendo soluções próximas ao ideal em cenários que envolvem restrições e objetivos distintos.
 
