@@ -6,7 +6,7 @@
 
 - Conteúdos
     - [Introdução à inteligência artificial](portifolio1/video.md)
-    - [Resolução de problemas de busca]
+    - [Resolução de problemas de busca](portiolio2/ImpressoesIniciais.md)
         -  [Impressões Iniciais](portiolio2/ImpressoesIniciais.md)
         -  [Subtópicos](portiolio2/subtopicos.md)
             -  [Agentes de solução de problemas](portiolio2/subtopicos.md#agentes-de-solução-de-problemas)
