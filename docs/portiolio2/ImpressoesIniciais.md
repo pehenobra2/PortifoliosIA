@@ -1,8 +1,4 @@
----
-id: impressoes-iniciais
-layout: default
-title: "Impressões Iniciais - Portfólio 2"
----
+
 
 # Impressões iniciais
 
