@@ -3,33 +3,19 @@ title: Inteligência Artificial
 description: Documentação sobre IA usando o Zendesk Garden Jekyll Theme
 baseurl: "" # Deixe vazio para GitHub Pages no nível raiz
 url: "https://pehenobra2.github.io/PortifoliosIA/"
+theme: jekyll-theme-minimal
 
-# Tema do Zendesk Garden
-remote_theme: zendesk/jekyll-theme-zendesk-garden@main
-
-# Ativar navegação lateral
+# Sidebar
 sidebar:
-  - title: "Índice"
-    nav:
-      - "docs/introducao"
-      - "docs/algoritmos-geneticos"
-      - "docs/aplicacoes-geneticos"
+  - label: Portfólio
+    children:
+      - introducao-ia
+      - resolucao-problemas
+  - label: Outros
+    children:
+      - aplicacoes-geneticos
+      - conclusao
 
-# Configuração de coleções (se necessário)
-collections:
-  docs:
-    output: true
-    permalink: /:collection/:path/
-
-defaults:
-  - scope:
-      path: ""
-      type: "docs"
-    values:
-      layout: "single"
-
-# Outros plugins necessários
+# Configuração de navegação
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
+  - jekyll-titles-from-headings # Gera títulos automaticamente a partir dos cabeçalhos
