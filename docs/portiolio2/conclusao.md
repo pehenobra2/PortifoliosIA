@@ -1,8 +1,4 @@
----
-id: conclusao
-layout: default
-title: "Conclusão - Portfólio 2"
----
+
 
 # Conclusão
 
