@@ -1,3 +1,8 @@
+---
+layout: default
+title: Bem-vindo
+---
+
 # Inteligência Artificial
 
 ## Aluno
