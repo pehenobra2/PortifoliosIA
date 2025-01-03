@@ -1,8 +1,4 @@
----
-id: referencias
-layout: default
-title: "Referências - Portfólio 2"
----
+
 
 # Referências
 
