@@ -1,0 +1,23 @@
+# Configuração básica do Jekyll
+title: Inteligência Artificial
+description: Documentação sobre IA usando o Zendesk Garden Jekyll Theme
+baseurl: "" # Deixe vazio para GitHub Pages no nível raiz
+url: "https://pehenobra2.github.io/PortifoliosIA/"
+
+# Tema do Zendesk Garden
+remote_theme: zendesk/jekyll-theme-zendesk-garden@main
+
+# Sidebar
+sidebar:
+  - label: Portfólio
+    children:
+      - introducao-ia
+      - resolucao-problemas
+  - label: Outros
+    children:
+      - aplicacoes-geneticos
+      - conclusao
+
+# Configuração de navegação
+plugins:
+  - jekyll-titles-from-headings # Gera títulos automaticamente a partir dos cabeçalhos
