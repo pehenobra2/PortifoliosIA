@@ -4,9 +4,9 @@
 
 ### **Portfólio**
 
+
 - [Introdução à inteligência artificial](./portifolio1/video.md)
-- <details>
-  <summary>▶ Resolução de problemas de busca</summary>
+- [Resolução de problemas de busca](./portiolio2/ImpressoesIniciais.md)
   - [Impressões Iniciais](./portiolio2/ImpressoesIniciais.md)
   - [Subtópicos](./portiolio2/subtopicos.md)
     - [Agentes de solução de problemas](./portiolio2/subtopicos.md#agentes-de-solução-de-problemas)
@@ -19,7 +19,6 @@
   - [Algoritmos genéticos para alocação de ativos](./portiolio2/projetosEproblemas.md)
   - [Conclusão](./portiolio2/conclusao.md)
   - [Referências](./portiolio2/referencias.md)
-</details>
 - [Problemas de satisfação de condição](./portiolio2/ImpressoesIniciais.md)
 - [Agentes lógicos](./portiolio2/ImpressoesIniciais.md)
 - [Quantificando incertezas e redes Bayesianas, raciocínio probalístico ao longo do tempo e filtros de Kalman](./portiolio2/ImpressoesIniciais.md)
