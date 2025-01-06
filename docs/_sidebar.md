@@ -1,8 +1,5 @@
-[Home](./README.md)
 
----
-
-### **Portfólio**
+## **Portfólio**
 
 
 - [Introdução à inteligência artificial](./portifolio1/video.md)
