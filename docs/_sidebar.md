@@ -19,3 +19,7 @@
   - [Algoritmos genéticos para alocação de ativos](./portiolio2/projetosEproblemas.md)
   - [Conclusão](./portiolio2/conclusao.md)
   - [Referências](./portiolio2/referencias.md)
+- [Problemas de satisfação de condição](./portiolio2/ImpressoesIniciais.md)
+- [Agentes lógicos](./portiolio2/ImpressoesIniciais.md)
+- [Quantificando incertezas e redes Bayesianas, raciocínio probalístico ao longo do tempo e filtros de Kalman](./portiolio2/ImpressoesIniciais.md)
+- [Aprendizado de máquina](./portiolio2/ImpressoesIniciais.md)
