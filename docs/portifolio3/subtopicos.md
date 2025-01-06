@@ -1,18 +1,39 @@
 # Representação Atômica vs Fatorada
 
-# Representação Atômica vs Fatorada
-
-A **representação atômica** e a **representação fatorada** são duas abordagens distintas para representar um ambiente em sistemas de inteligência artificial (IA), cada uma com implicações sobre a complexidade e a expressividade da estrutura de pensamento de um agente. A **principal diferença** entre elas é a **complexidade**: enquanto a representação atômica é mais simples e adequada para tarefas diretas, a representação fatorada adiciona mais detalhes, permitindo um planejamento mais preciso, porém com maior **custo computacional**. Schier (2024) observa que "quanto mais detalhado for o ambiente, mais complexa será a estrutura de representação". A escolha entre essas abordagens depende das exigências da tarefa e do equilíbrio entre simplicidade e detalhamento.
+A **representação atômica** e a **representação fatorada** são duas abordagens distintas para representar estados em ambientes de sistemas de inteligência artificial (IA). Enquanto a representação atômica trata os estados como entidades indivisíveis e simples, a representação fatorada decompõe esses estados em variáveis e atributos, permitindo maior flexibilidade e expressividade. Ambas as abordagens possuem vantagens e limitações, dependendo do tipo de problema a ser resolvido e dos requisitos de detalhamento e eficiência computacional.
 
 ## 1. Representação Atômica
-Na **representação atômica**, o ambiente é descrito de forma unitária, com estados simples e isolados, sem decomposição ou detalhamento adicional. Como Schier (2024) aponta, "o estado do ambiente de tarefas, obtido por meio dos sensores, também não pode ser decomposto em qualquer tipo de estrutura interna". Nesse modelo, a transição entre estados ocorre de forma direta, sem levar em consideração atributos ou características adicionais do ambiente. Um exemplo prático seria um agente que se desloca de um ponto A para um ponto B em linha reta, sem considerar obstáculos ou as condições do percurso. O agente apenas sabe que o ponto de partida é A e o destino é B, sem mais informações sobre o caminho ou o próprio agente.
+
+Na **representação atômica**, os estados do ambiente são tratados como **indivisíveis** ou **caixas-pretas**, sem qualquer estrutura interna que possa ser manipulada diretamente. Russell e Norvig (2022) destacam que, "do ponto de vista do algoritmo de busca, cada estado é atômico, ou indivisível — uma caixa-preta, sem estrutura interna". Isso implica que as transições entre os estados são definidas de forma direta, sem levar em consideração características ou atributos internos. 
+
+Como exemplo, podemos imaginar um agente que deve se deslocar de um ponto A para um ponto B. Na abordagem atômica, o agente sabe apenas que deve ir de A para B, sem considerar elementos adicionais, como o tipo de terreno ou o tempo necessário. Essa simplicidade reduz a complexidade computacional, mas limita a capacidade do agente de realizar planejamentos mais elaborados. Schier (2024) reforça que "o estado do ambiente de tarefas, obtido por meio dos sensores, também não pode ser decomposto em qualquer tipo de estrutura interna".
 
 ## 2. Representação Fatorada
-Na **representação fatorada**, o ambiente é descrito de forma mais detalhada, atribuindo atributos específicos aos objetos que o compõem. Esses atributos podem variar entre os estados, proporcionando uma descrição mais rica e expressiva. Como Schier (2024) explica, "os estados do ambiente podem ser caracterizados por meio da atribuição de um determinado número de atributos aos objetos". No exemplo do deslocamento, além de simplesmente mover-se de A para B, o agente agora pode considerar fatores como a qualidade do terreno, a quantidade de combustível disponível ou até o tempo estimado para a viagem, permitindo um planejamento mais refinado e adaptativo.
 
-Apesar das diferenças de complexidade, Schier (2024) conclui que "independentemente do grau de expressividade do ambiente, um agente racional de IA conseguiria se deslocar de A para B utilizando qualquer uma das três formas de representações". Isso demonstra a flexibilidade dos modelos de representação em IA, que podem ser ajustados conforme a necessidade de precisão e detalhamento em diferentes contextos.
+A **representação fatorada**, por outro lado, permite descrever os estados do ambiente como conjuntos de **variáveis**, cada uma com um valor associado. Segundo Russell e Norvig (2022), "utilizaremos uma representação fatorada para cada estado: um conjunto de variáveis, cada qual com um valor". Isso possibilita uma descrição mais detalhada e rica do ambiente, onde os estados podem ser caracterizados por atributos específicos que variam conforme a situação.
+
+Por exemplo, ao se deslocar de A para B, um agente que utiliza uma representação fatorada pode considerar variáveis como a qualidade do terreno, a distância, o consumo de energia e o tempo estimado. Essa abordagem é particularmente útil em problemas de satisfação de restrição (PSR), nos quais o objetivo é atribuir valores às variáveis de forma a satisfazer todas as restrições impostas.
+
+Schier (2024) complementa que "os estados do ambiente podem ser caracterizados por meio da atribuição de um determinado número de atributos aos objetos". Isso oferece ao agente uma base mais detalhada para tomar decisões e planejar ações, mas com um custo computacional mais elevado em comparação à abordagem atômica.
+
+---
 
 # Definindo Problemas de satisfação de condições
+
+Um **Problema de Satisfação de Restrições (PSR)** é uma forma de modelar problemas em termos de variáveis, valores e restrições. Ele é definido por três componentes principais:
+
+- **Variáveis (X)**: Representam os elementos do problema, como X₁, X₂, ..., Xₙ.  
+- **Domínios (D)**: Conjuntos de valores possíveis para cada variável, como D₁, D₂, ..., Dₙ.  
+- **Restrições (C)**: Regras que especificam combinações válidas de valores entre as variáveis.  
+
+Uma **solução** para um PSR é uma atribuição de valores que seja consistente (não viole nenhuma restrição) e completa (todas as variáveis têm um valor). 
+
+Por exemplo, no problema de coloração de mapas, o objetivo é colorir cada região com uma cor (vermelho, verde ou azul) de forma que regiões vizinhas tenham cores diferentes. Esse tipo de modelagem é eficiente porque permite descartar atribuições inválidas rapidamente e focar em soluções viáveis.
+
+Os PSRs são amplamente aplicados devido à sua flexibilidade e eficiência na resolução de problemas complexos, especialmente quando comparados com métodos tradicionais de busca em espaço de estados.
+
+---
+
 # Tipos de condições
 # Consistência
 ## 1. Nó
