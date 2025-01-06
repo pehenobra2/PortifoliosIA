@@ -28,6 +28,9 @@ Um **Problema de Satisfação de Restrições (PSR)** é uma forma de modelar pr
 
 Uma **solução** para um PSR é uma atribuição de valores que seja consistente (não viole nenhuma restrição) e completa (todas as variáveis têm um valor). 
 
+![image](https://github.com/user-attachments/assets/ff5b948e-744a-46b7-81f7-d3150b482dd2)
+
+
 Por exemplo, no problema de coloração de mapas, o objetivo é colorir cada região com uma cor (vermelho, verde ou azul) de forma que regiões vizinhas tenham cores diferentes. Esse tipo de modelagem é eficiente porque permite descartar atribuições inválidas rapidamente e focar em soluções viáveis.
 
 Os PSRs são amplamente aplicados devido à sua flexibilidade e eficiência na resolução de problemas complexos, especialmente quando comparados com métodos tradicionais de busca em espaço de estados.
@@ -35,8 +38,42 @@ Os PSRs são amplamente aplicados devido à sua flexibilidade e eficiência na r
 ---
 
 # Tipos de condições
+
+- **Restrições Unitárias**: Limitam o valor de uma única variável. Por exemplo, uma região do mapa não pode ser verde (e.g., SA ≠ G).
+
+- **Restrições Binárias**: Estabelecem relações entre duas variáveis. Por exemplo, duas regiões adjacentes não podem ter a mesma cor (e.g., SA ≠ NSW).
+
+- **Restrições Ternárias**: Relacionam três variáveis, como em uma condição de ordem (e.g., X > Y > Z).
+
+- **Restrições Globais**: Envolvem um número arbitrário de variáveis, mas não necessariamente todas. Um exemplo comum é a restrição "TodosDiferentes" (e.g., Alldiff(A1, A2, A3, B1, B2, B3, C1, C2, C3)).
+
+Qualquer PSR pode ser transformado em um PSR que contenha apenas restrições binárias. Por exemplo, uma restrição ternária como X > Y > Z pode ser reescrita como X > Y e Y > Z.
+
+## Condições de Preferência
+
+Além das restrições necessárias, podem-se incluir condições de preferência para modelar soluções ideais. Por exemplo:
+
+- Nenhum professor pode dar duas aulas ao mesmo tempo (condição necessária).  
+- O professor A prefere dar aulas pela manhã (condição preferencial).  
+- Uma sala X deve, preferencialmente, receber turmas maiores.
+
+As condições de preferência são úteis para encontrar soluções que, embora válidas, sejam também otimizadas para os critérios desejados.
+
+---
 # Consistência
+
+A consistência local é uma técnica central em algoritmos para PSRs que busca simplificar o problema antes ou durante a busca de soluções. Essa abordagem utiliza as restrições do problema para reduzir os valores possíveis de variáveis, eliminando valores inconsistentes e propagando essas reduções para outras variáveis. Visualizando o problema como um grafo, onde as variáveis são nós e as restrições binárias são arcos, a consistência local pode ser aplicada em diferentes níveis, como consistência de nó, arco, caminho e consistência k. Além disso, restrições globais podem ser usadas para simplificar problemas complexos de maneira eficiente.
+
 ## 1. Nó
+
+A *consistência de nó* é um conceito aplicado a redes de restrições (PSR - *Constraint Satisfaction Problems*), onde uma variável é considerada *nó-consistente* se todos os valores no seu domínio satisfizerem as restrições unárias dessa variável. Em outras palavras, cada valor permitido para uma variável deve cumprir com as condições impostas a essa variável.
+
+Por exemplo, no problema de coloração do mapa da Austrália (Russell & Norvig, 2022), onde a região "SA" não pode ser colorida de verde, se o domínio inicial de "SA" for {vermelho, verde, azul}, podemos tornar essa variável nó-consistente ao eliminar a cor verde. O domínio reduzido de "SA" seria então {vermelho, azul}.
+
+A rede é considerada *nó-consistente* se todas as suas variáveis forem nó-consistentes. Em um PSR, é possível eliminar as restrições unárias de todas as variáveis ao executar a consistência de nó.
+
+Essa abordagem também é útil para transformar restrições n-árias em binárias, o que facilita a resolução de PSRs, pois muitos solucionadores de PSR trabalham com restrições binárias (Russell & Norvig, 2022).
+
 ## 2. Arco
 ## 3. Trajeto
 ## 4. K
