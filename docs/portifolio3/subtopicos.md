@@ -28,10 +28,10 @@ Um **Problema de Satisfação de Restrições (PSR)** é uma forma de modelar pr
 
 Uma **solução** para um PSR é uma atribuição de valores que seja consistente (não viole nenhuma restrição) e completa (todas as variáveis têm um valor). 
 
-![image](https://github.com/user-attachments/assets/ff5b948e-744a-46b7-81f7-d3150b482dd2)
+![Demonstração do problema de coloração de mapas](../assets/exemploMapas.png)  
+*Figura 1: Demonstração com imagem do problema de coloração de mapas.*
 
-
-Por exemplo, no problema de coloração de mapas, o objetivo é colorir cada região com uma cor (vermelho, verde ou azul) de forma que regiões vizinhas tenham cores diferentes. Esse tipo de modelagem é eficiente porque permite descartar atribuições inválidas rapidamente e focar em soluções viáveis.
+Por exemplo, no problema de coloração de mapas, demonstrado na figura acima, o objetivo é colorir cada região com uma cor (vermelho, verde ou azul) de forma que regiões vizinhas tenham cores diferentes. Esse tipo de modelagem é eficiente porque permite descartar atribuições inválidas rapidamente e focar em soluções viáveis.
 
 Os PSRs são amplamente aplicados devido à sua flexibilidade e eficiência na resolução de problemas complexos, especialmente quando comparados com métodos tradicionais de busca em espaço de estados.
 
@@ -68,16 +68,60 @@ A consistência local é uma técnica central em algoritmos para PSRs que busca 
 
 A *consistência de nó* é um conceito aplicado a redes de restrições (PSR - *Constraint Satisfaction Problems*), onde uma variável é considerada *nó-consistente* se todos os valores no seu domínio satisfizerem as restrições unárias dessa variável. Em outras palavras, cada valor permitido para uma variável deve cumprir com as condições impostas a essa variável.
 
-Por exemplo, no problema de coloração do mapa da Austrália (Russell & Norvig, 2022), onde a região "SA" não pode ser colorida de verde, se o domínio inicial de "SA" for {vermelho, verde, azul}, podemos tornar essa variável nó-consistente ao eliminar a cor verde. O domínio reduzido de "SA" seria então {vermelho, azul}.
+Por exemplo, no problema de coloração do mapa da Austrália, demonstrado na *figura 1*, onde a região "SA" não pode ser colorida de verde, se o domínio inicial de "SA" for {vermelho, verde, azul}, podemos tornar essa variável nó-consistente ao eliminar a cor verde. O domínio reduzido de "SA" seria então {vermelho, azul}.
 
 A rede é considerada *nó-consistente* se todas as suas variáveis forem nó-consistentes. Em um PSR, é possível eliminar as restrições unárias de todas as variáveis ao executar a consistência de nó.
 
 Essa abordagem também é útil para transformar restrições n-árias em binárias, o que facilita a resolução de PSRs, pois muitos solucionadores de PSR trabalham com restrições binárias (Russell & Norvig, 2022).
 
 ## 2. Arco
+
+Uma variável em um *Problema de Satisfação de Restrições* (CSP) é considerada *arco-consistente* se todos os valores no seu domínio satisfizerem as restrições binárias relacionadas a essa variável. De forma mais formal, uma variável \(X_i\) é arco-consistente em relação a outra variável \(X_j\) se, para cada valor no domínio de \(X_i\), existir algum valor no domínio de \(X_j\) que satisfaça a restrição binária entre \(X_i\) e \(X_j\). 
+
+Uma rede é considerada *arco-consistente* se todas as suas variáveis forem arco-consistentes entre si.
+
+Por exemplo, suponha que a restrição entre duas variáveis \(X\) e \(Y\) seja \(Y = X^2\), onde o domínio de ambas as variáveis é o conjunto de dígitos. Podemos escrever essa restrição explicitamente como:
+
+\[
+Y = X^2
+\]
+
+Para tornar \(X\) arco-consistente em relação a \(Y\), o domínio de \(X\) seria reduzido a \{0, 1, 2, 3\}. De maneira semelhante, para tornar \(Y\) arco-consistente em relação a \(X\), o domínio de \(Y\) seria reduzido a \{0, 1, 4, 9\}, e a rede inteira se tornaria arco-consistente.
+
+No entanto, a consistência de arco não sempre tem impacto. Por exemplo, no problema de coloração do mapa da Austrália, a restrição de desigualdade entre duas regiões, como AM e AO, não restringe o valor de nenhuma das variáveis, pois para qualquer valor atribuído a AM ou AO, sempre haverá uma opção válida para a outra variável. Assim, a aplicação da consistência de arco não teria efeito sobre os domínios das variáveis.
+
 ## 3. Trajeto
+
+A *consistência de trajeto* é uma forma mais forte de consistência em redes de restrições, onde um conjunto de duas variáveis \(\{X_i, X_j\}\) é considerado consistente em relação a uma terceira variável \(X_m\) se, para cada atribuição consistente entre \(X_i\) e \(X_j\), existir uma atribuição para \(X_m\) que satisfaça as restrições binárias entre todas as variáveis. Esse conceito é útil para verificar relações implícitas entre as variáveis.
+
+No exemplo da coloração do mapa da Austrália com duas cores, a consistência de trajeto mostra que, para algumas atribuições, não é possível atribuir uma cor válida a uma variável intermediária, como no caso de \(TN\) não podendo ser nem vermelho nem azul, resultando em uma conclusão de que não há solução viável.
+
+O algoritmo *PC-2* (Mackworth, 1977) é usado para alcançar a consistência de trajeto, de forma semelhante ao *AC-3* para consistência de arco.
+
 ## 4. K
+
+A *k-consistência* é uma forma mais geral de propagação de consistência em redes de restrições (PSR). Uma PSR é considerada k-consistente se, para qualquer conjunto de \(k - 1\) variáveis e qualquer atribuição consistente a essas variáveis, sempre é possível atribuir um valor consistente à variável \(k\)-ésima. 
+
+- A *1-consistência* corresponde à consistência de nó, onde qualquer variável pode ser atribuída com um valor que satisfaça as restrições unárias.
+- A *2-consistência* é equivalente à consistência de arco, onde cada variável deve ser consistente com todas as outras variáveis nas restrições binárias.
+- A *3-consistência* corresponde à consistência de caminho, que verifica a consistência entre três variáveis ao mesmo tempo.
+
+Uma PSR é chamada de *fortemente k-consistente* se for k-consistente e também \((k - 1)\)-consistente, \((k - 2)\)-consistente, e assim por diante até 1-consistente.
+
+Se uma PSR for fortemente n-consistente (ou seja, k-consistente para \(k = n\), com \(n\) sendo o número total de variáveis), o problema pode ser resolvido de forma eficiente. Ao escolher um valor consistente para \(X_1\), a 2-consistência garante a escolha para \(X_2\), a 3-consistência para \(X_3\), e assim por diante. Esse processo permite encontrar uma solução no tempo \(O(n^2d)\), onde \(d\) é o número de valores no domínio.
+
+Entretanto, há uma desvantagem: o tempo necessário para estabelecer a consistência é exponencial no pior caso, e a memória necessária também cresce exponencialmente com \(n\). Na prática, a verificação de consistência de 2-nível é comum, enquanto a verificação de 3-consistência é menos frequente, devido ao alto custo computacional.
+
 ## 5. Globais
+
+As *restrições globais* envolvem várias variáveis e podem ser tratadas com algoritmos especializados, mais eficientes que os métodos gerais. Um exemplo é a restrição *TodosDiferentes*, que exige valores distintos para todas as variáveis. Uma maneira simples de detectar inconsistência é, se o número de variáveis \(m\) for maior que o número de valores \(n\), a restrição não pode ser satisfeita.
+
+Outro exemplo é a restrição *atmost*, que limita a soma de variáveis, como "não mais que 10 pessoas" em quatro tarefas. A inconsistência pode ser detectada verificando a soma dos valores mínimos nos domínios das variáveis.
+
+Algoritmos para restrições globais podem ser mais eficientes que a consistência de arco, mas, em alguns casos, exigem maior custo computacional.
+
+---
+
 # Algoritmos
 # Estrutura de problemas
 
@@ -87,3 +131,5 @@ Essa abordagem também é útil para transformar restrições n-árias em binár
 SCHIER, Ubirajara Theodoro. O RACIOCÍNIO PRÁTICO E INTELIGÊNCIA ARTIFICIAL: A NECESSIDADE DE EVOLUÇÃO DE UMA ESTRUTURA DE PENSAMENTO HIERÁRQUICA PARA UM ESTRUTURA DE PENSAMENTO EM REDE. Polymatheia-Revista de Filosofia, v. 17, n. 1, p. 360-385, 2024.
 
 Russell, S. and Norvig, P., Artificial Intelligence - A Modern Approach, 4th ed, Pearson, 2022
+
+Mackworth, A. K. (1977). *Consistent Labeling of Constraints*. Proceedings of the 5th International Joint Conference on Artificial Intelligence (IJCAI-77).
