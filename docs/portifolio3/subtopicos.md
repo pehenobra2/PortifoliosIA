@@ -123,13 +123,28 @@ Algoritmos para restrições globais podem ser mais eficientes que a consistênc
 ---
 
 # Algoritmos
+
+## 1. AC-3 (Algoritmo de Consistência de Arco)
+O AC-3 é um algoritmo usado para garantir a consistência de arco em redes de restrições. Ele trabalha verificando todas as restrições binárias entre as variáveis, removendo valores incompatíveis nos domínios das variáveis. O algoritmo continua a processar até que não haja mais mudanças nos domínios. Isso ajuda a reduzir os domínios das variáveis e pode simplificar a solução do problema.
+
+## 2. Sudoku - Exemplo de CSP
+
+O Sudoku é um exemplo clássico de problema de satisfação de restrições (CSP). As variáveis são as células do tabuleiro, os domínios são os números de 1 a 9, e as restrições são as regras de que cada número deve aparecer uma vez por linha, coluna e bloco 3x3. Resolver o Sudoku envolve atribuir números às células de maneira que todas as restrições sejam satisfeitas.
+
+## 3. Pesquisa backtraking para CSPs
+
+A pesquisa backtracking é uma técnica de busca que tenta atribuir valores às variáveis de um CSP. Se uma atribuição viola uma restrição, o algoritmo retrocede e tenta outra possibilidade. Esse processo continua até encontrar uma solução ou determinar que o problema é impossível. É uma abordagem completa, mas pode ser ineficiente sem técnicas de poda, como a consistência de arco.
+
+## 4. Intercalando pesquisa e inferência para CSPs
+
+Essa abordagem combina pesquisa backtracking com técnicas de inferência (como AC-3 ou consistência de caminho). A inferência é usada para reduzir os domínios das variáveis antes ou durante a busca, simplificando o problema. Isso pode levar a uma solução mais rápida, pois reduz o número de decisões de atribuição durante a busca.
+
+## 5. Busca local para CSPs
+
+A busca local envolve a exploração de soluções próximas a uma solução parcial já existente. Em CSPs, isso pode ser feito através de algoritmos como *hill climbing* ou *simulated annealing*, que tentam melhorar uma solução existente movendo-se em direção a uma solução melhor, sem a necessidade de examinar todo o espaço de soluções. Embora seja mais eficiente que a busca exaustiva, pode não encontrar a solução global.
+
+
 # Estrutura de problemas
 
 
-### Referencias
 
-SCHIER, Ubirajara Theodoro. O RACIOCÍNIO PRÁTICO E INTELIGÊNCIA ARTIFICIAL: A NECESSIDADE DE EVOLUÇÃO DE UMA ESTRUTURA DE PENSAMENTO HIERÁRQUICA PARA UM ESTRUTURA DE PENSAMENTO EM REDE. Polymatheia-Revista de Filosofia, v. 17, n. 1, p. 360-385, 2024.
-
-Russell, S. and Norvig, P., Artificial Intelligence - A Modern Approach, 4th ed, Pearson, 2022
-
-Mackworth, A. K. (1977). *Consistent Labeling of Constraints*. Proceedings of the 5th International Joint Conference on Artificial Intelligence (IJCAI-77).
