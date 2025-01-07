@@ -35,7 +35,7 @@
     - [Agente baseado em conhecimento](./portiolio4/subtopicos.md#agente-baseado-em-conhecimento)
     - [Processo de inferência](./portiolio4/subtopicos.md#processo-de-inferência)
     - [Agente baseado em lógica proposicional](./portiolio4/subtopicos.md#agente-baseado-em-lógica-proposicional)
-  - [Algoritmo de Resolução](./portiolio4/discussoes.md)
+  - [Algoritmo de Resolução](./portifolio4/discussoes.md)
   - [Aplicação do Algoritmo de Resolução](./portiolio4/projetosEproblemas.md)
   - [Conclusão](./portiolio4/conclusao.md)
   - [Referências](./portiolio4/referencias.md)
