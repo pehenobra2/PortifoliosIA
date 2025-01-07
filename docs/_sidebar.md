@@ -20,7 +20,7 @@
   - [Impressões Iniciais](./portifolio3/impressaoInicial.md)
   - [Subtópicos](./portifolio3/subtopicos.md)
     - [Representação Atômica vs Fatorada](./portifolio3/subtopicos.md#representação-atômica-vs-fatorada)
-    - [Definindo problemas de satisfação de condições](./portifolio3/subtopicos.md#definindo-problemas-de-satisfação-de-condições)
+    - [Definindo Problemas de Satisfação de Restrições (PSR)](./portifolio3/subtopicos.md#definindo-problemas-de-satisfação-de-restrições-psr)
     - [Tipos de condições](./portifolio3/subtopicos.md#tipos-de-condições)
     - [Consistência](./portifolio3/subtopicos.md#consistência)
     - [Algoritmos](./portifolio3/subtopicos.md#algoritmos)
