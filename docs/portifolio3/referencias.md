@@ -1,7 +1,7 @@
-# Referencias
+# Referências
 
-SCHIER, Ubirajara Theodoro. O RACIOCÍNIO PRÁTICO E INTELIGÊNCIA ARTIFICIAL: A NECESSIDADE DE EVOLUÇÃO DE UMA ESTRUTURA DE PENSAMENTO HIERÁRQUICA PARA UM ESTRUTURA DE PENSAMENTO EM REDE. Polymatheia-Revista de Filosofia, v. 17, n. 1, p. 360-385, 2024.
+- MACKWORTH, Alan K. Consistent labeling of constraints. In: Proceedings of the 5th International Joint Conference on Artificial Intelligence (IJCAI-77). 1977.
 
-Russell, S. and Norvig, P., Artificial Intelligence - A Modern Approach, 4th ed, Pearson, 2022
+- RUSSELL, Stuart; NORVIG, Peter. Artificial intelligence: a modern approach. 4. ed. Pearson, 2022.
 
-Mackworth, A. K. (1977). *Consistent Labeling of Constraints*. Proceedings of the 5th International Joint Conference on Artificial Intelligence (IJCAI-77).
+- SCHIER, Ubirajara Theodoro. O raciocínio prático e inteligência artificial: a necessidade de evolução de uma estrutura de pensamento hierárquica para uma estrutura de pensamento em rede. Polymatheia-Revista de Filosofia, v. 17, n. 1, p. 360-385, 2024.
