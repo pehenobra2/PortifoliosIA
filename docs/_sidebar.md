@@ -30,5 +30,5 @@
   - [Conclusão](./portifolio3/conclusao.md)
   - [Referências](./portifolio3/referencias.md)
 - [Agentes lógicos](./portiolio2/ImpressoesIniciais.md)
-- [Quantificando incertezas e redes Bayesianas, raciocínio probalístico ao longo do tempo e filtros de Kalman](./portiolio2/ImpressoesIniciais.md)
-- [Aprendizado de máquina](./portiolio2/ImpressoesIniciais.md)
+<!-- [Quantificando incertezas e redes Bayesianas, raciocínio probalístico ao longo do tempo e filtros de Kalman](./portiolio2/ImpressoesIniciais.md)
+- [Aprendizado de máquina](./portiolio2/ImpressoesIniciais.md) -->
