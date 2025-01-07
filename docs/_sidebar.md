@@ -17,7 +17,7 @@
   - [Conclusão](./portifolio2/conclusao.md)
   - [Referências](./portifolio2/referencias.md)
 - [Problemas de satisfação de condição](./portifolio3/ImpressoesIniciais.md)
-  - [Impressões Iniciais](./portifolio3/ImpressoesIniciais.md)
+  - [Impressões Iniciais](./portifolio3/impressaoInicial.md)
   - [Subtópicos](./portifolio3/subtopicos.md)
     - [Representação Atômica vs Fatorada](./portifolio3/subtopicos.md#representação-atômica-vs-fatorada)
     - [Definindo problemas de satisfação de condições](./portifolio3/subtopicos.md#definindo-problemas-de-satisfação-de-condições)
