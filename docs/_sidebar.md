@@ -33,6 +33,7 @@
   - [Impressões Iniciais](./portifolio4/impressaoInicial.md)
   - [Subtópicos](./portifolio4/subtopicos.md)
     - [Agente baseado em conhecimento](./portifolio4/subtopicos.md#agente-baseado-em-conhecimento)
+    - [Lógica](./portifolio4/subtopicos.md#lógica)
     - [Processo de inferência](./portifolio4/subtopicos.md#processo-de-inferência)
     - [Agente baseado em lógica proposicional](./portifolio4/subtopicos.md#agente-baseado-em-lógica-proposicional)
   - [Algoritmo de Resolução](./portifolio4/discussoes.md)
