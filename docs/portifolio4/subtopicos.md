@@ -10,7 +10,7 @@ Esse modelo exemplifica como um agente pode tomar decisões inteligentes, racioc
 
 ## Wumpus World
 
-O **mundo de Wumpus** é um ambiente desafiador no qual o agente deve explorar uma caverna composta por salas conectadas. O objetivo é encontrar o **ouro** e escapar da caverna, evitando perigos como o **wumpus**, que pode devorar o agente, e os **poços**, que podem fazer o agente cair.
+O **wumpus world** é um ambiente desafiador no qual o agente deve explorar uma caverna composta por salas conectadas. O objetivo é encontrar o **ouro** e escapar da caverna, evitando perigos como o **wumpus**, que pode devorar o agente, e os **poços**, que podem fazer o agente cair.
 
 O ambiente é uma **malha 4x4 de salas**, com o agente começando em [1,1]. Ele pode realizar ações como mover-se, atirar uma flecha para derrotar o wumpus, pegar o ouro ou escalar para sair da caverna. O agente também possui sensores que percebem **fedor**, **brisa**, **brilho**, **impacto** e **grito**.
 
@@ -20,8 +20,28 @@ A tarefa do agente é usar **raciocínio lógico** para superar sua ignorância 
 
 Esse processo de raciocínio lógico, aliado à atualização constante do conhecimento, é fundamental para o sucesso do agente no **Wumpus World**.
 
-
 # Lógica
+
+A **lógica** estuda os princípios do raciocínio válido e da inferência. Em inteligência artificial, ela é usada para representar conhecimento e deduzir conclusões. As sentenças lógicas podem ser **verdadeiras** ou **falsas**, e sua validade é regida por dois componentes principais: **sintaxe** e **semântica**.
+
+## Sintaxe
+
+A sintaxe define as regras que determinam a estrutura válida das sentenças em um sistema lógico. Ou seja, especifica como os símbolos devem ser combinados para formar expressões bem formadas. Por exemplo, em aritmética, a expressão "x + y = 4" é válida, enquanto "x4y+ =" não é, pois não segue as regras de formação.
+
+## Semântica
+
+A semântica refere-se ao significado das sentenças, ou seja, à sua **verdade** em relação a diferentes **modelos** ou **mundos possíveis**. A semântica define quando uma sentença é verdadeira ou falsa em um dado contexto. Por exemplo, a sentença "x + y = 4" é verdadeira em um mundo onde x = 2 e y = 2, mas falsa em um mundo onde x = 1 e y = 1.
+
+## Consequência Lógica e Raciocínio
+
+A **consequência lógica** (α |= β) indica que, se α é verdadeira, então β também deve ser verdadeira. Essa relação é fundamental para o **raciocínio lógico**, que permite deduzir novas sentenças a partir de premissas conhecidas.
+
+Os algoritmos de inferência podem ser **corretos** (preservando a verdade) e **completos** (capazes de derivar todas as consequências lógicas). Embora a verificação de modelos seja uma ferramenta poderosa, ela pode ser computacionalmente cara.
+
+## Aplicações em Agentes Autônomos
+
+Em agentes autônomos, como no **mundo de Wumpus**, a lógica permite que o agente combine percepções e conhecimento para tomar decisões racionais. O agente utiliza seu conhecimento sobre o ambiente, como regras sobre a presença do wumpus ou dos poços, para deduzir ações seguras e alcançar seus objetivos de forma adaptativa.
+
 # Processo de inferência
 # Agente baseado em lógica proposicional
 
