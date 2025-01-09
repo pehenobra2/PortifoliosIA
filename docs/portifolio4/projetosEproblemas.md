@@ -117,7 +117,7 @@ A função `resolution` segue os passos abaixo:
 #### Iterações:
 
 ![Resultado do Caso 1](../assets/caso1.png)  
-*Figura 1: Exemplo teórico do funcionamento do algoritmo para o Caso 1.*
+*Figura 1: Demonstração do algoritmo para o Caso 1. A imagem ilustra o processo de resolução das cláusulas, com a geração das novas cláusulas e a detecção de contradição (cláusula vazia) após a terceira iteração.*
 
 **Resultado:** A consulta é uma consequência lógica da base.
 
@@ -132,7 +132,7 @@ A função `resolution` segue os passos abaixo:
 #### Iterações:
 
 ![Resultado do Caso 2](../assets/caso2.png)  
-*Figura 2: Exemplo teórico do funcionamento do algoritmo para o Caso 2.*
+*Figura 2: Demonstração do algoritmo para o Caso 2. A imagem apresenta o processo de resolução das cláusulas e como o algoritmo atinge o limite de iterações após não encontrar contradição, concluindo que a consulta não é uma consequência lógica da base de conhecimento.*
 
 **Resultado:** A consulta NÃO é uma consequência lógica da base.
 
