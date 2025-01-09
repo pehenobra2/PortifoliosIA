@@ -20,11 +20,11 @@ Considere duas bases de conhecimento distintas e consultas associadas:
   3. (¬B ∨ D)
 - **Consulta:** C
 
-Nosso objetivo é determinar se as consultas são consequências lógicas das respectivas bases.
+Nosso objetivo é determinar se as consultas são consequências lógicas das respectivas bases de conhecimento.
 
 ## Implementação do Algoritmo
 
-A seguir, apresentamos o código para resolver o problema utilizando o método de prova por refutação.
+A seguir, apresentamos um algoritmo que resolve o problema utilizando o método de prova por refutação.
 
 ```python
 def resolve(clause1, clause2):
@@ -96,14 +96,14 @@ else:
 
 ### Função `resolve`
 
-A função `resolve` realiza a resolução entre duas cláusulas. Ela verifica se há literais complementares (como `A` e `¬A`) e, se encontrados, combina os literais restantes das cláusulas para formar uma nova cláusula.
+A função `resolve` realiza a resolução entre duas cláusulas. Ela identifica literais complementares (como `A` e `¬A`) e, ao encontrá-los, combina os literais restantes das cláusulas, formando uma nova cláusula.
 
 ### Função `resolution`
 
-A função `resolution` segue os passos:
+A função `resolution` segue os passos abaixo:
 1. Adiciona a negação da consulta à base de conhecimento.
-2. Gera pares de cláusulas e aplica a resolução para produzir novas cláusulas.
-3. Verifica se uma cláusula vazia é gerada (indicando contradição).
+2. Combina pares de cláusulas existentes e aplica a função `resolve` para gerar novas cláusulas.
+3. Verifica se a cláusula vazia foi gerada (indicando contradição).
 4. Retorna `True` se a consulta é uma consequência lógica ou `False` caso contrário.
 
 ## Execução e Resultados
@@ -116,8 +116,12 @@ A função `resolution` segue os passos:
 
 #### Iterações:
 
-![Demonstração da busca em largura](../assets/caso1.png)  
-*Figura 1: Demonstração teórica do funcionamento da busca em largura.*
+![Resultado do Caso 1](../assets/caso1.png)  
+*Figura 1: Exemplo teórico do funcionamento do algoritmo para o Caso 1.*
+
+**Resultado:** A consulta é uma consequência lógica da base.
+
+---
 
 ### Caso 2: Não Consequência Lógica
 
@@ -127,12 +131,15 @@ A função `resolution` segue os passos:
 
 #### Iterações:
 
-![Demonstração da busca em largura](../assets/caso2.png)  
-*Figura 1: Demonstração teórica do funcionamento da busca em largura.*
+![Resultado do Caso 2](../assets/caso2.png)  
+*Figura 2: Exemplo teórico do funcionamento do algoritmo para o Caso 2.*
+
+**Resultado:** A consulta NÃO é uma consequência lógica da base.
+
+---
 
 ## Conclusão
 
-O algoritmo de resolução demonstra ser uma ferramenta poderosa para inferência lógica, permitindo determinar se uma sentença é consequência lógica de uma base de conhecimento. Contudo, sua eficiência pode ser limitada pela complexidade computacional e pelo número de cláusulas geradas. Ele é amplamente utilizado em sistemas baseados em conhecimento e em inteligência artificial para resolver problemas envolvendo lógica proposicional e de predicados.
-
+O algoritmo de resolução demonstra ser uma ferramenta eficaz para inferência lógica, permitindo determinar se uma sentença é consequência lógica de uma base de conhecimento. Apesar de sua eficiência ser influenciada pela complexidade computacional e pelo número de cláusulas geradas, ele continua sendo amplamente utilizado em sistemas baseados em conhecimento, como provas automatizadas e diagnósticos lógicos.
 
 
