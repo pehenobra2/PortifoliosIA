@@ -154,6 +154,34 @@ $$P(A \cap B) = P(A) P(B)$$
 ---
 
 # Independência e Independência Condicional
+
+A independência entre variáveis em um modelo probabilístico é uma propriedade fundamental que simplifica significativamente a representação e o cálculo das distribuições conjuntas. Como destacado por Russell e Norvig (2022), quando variáveis são independentes, a distribuição conjunta pode ser fatorada, reduzindo o número de entradas necessárias para a sua especificação.
+
+## Independência
+Duas variáveis \( A \) e \( B \) são ditas **independentes** se o conhecimento do valor de uma não altera a probabilidade da outra. Matematicamente, isso é expresso como:
+
+$$\[ P(A \cap B) = P(A) P(B) \]$$
+
+Isso significa que o resultado de \( A \) não influencia o de \( B \), e vice-versa. Um exemplo clássico é o lançamento de duas moedas justas: o resultado de uma moeda não afeta o resultado da outra.
+
+Russell e Norvig (2022) citam que a independência permite fatorar distribuições conjuntas. Por exemplo, se tivermos n lançamentos independentes de moedas, a distribuição conjunta pode ser escrita como:
+
+$$\[ P(C_1, C_2, ..., C_n) = P(C_1) P(C_2) ... P(C_n) \]$$
+
+## Independência Condicional
+Em muitos casos, duas variáveis podem ser dependentes no geral, mas se tornarem **independentes quando condicionado a uma terceira variável**. Isso é chamado de **independência condicional**. Formalmente, \( A \) e \( B \) são condicionalmente independentes dado \( C \) se:
+
+$$\[ P(A \cap B | C) = P(A | C) P(B | C) \]$$
+
+Isso significa que, dado o conhecimento de \( C \), as variáveis \( A \) e \( B \) não fornecem mais informação uma sobre a outra.
+
+## Importância e Limitações
+A independência condicional é especialmente útil para simplificar modelos probabilísticos, como Redes Bayesianas, onde conexões indiretas entre variáveis podem ser eliminadas ao condicionar uma variável intermediária. No entanto, como ressaltado por Russell e Norvig (2022), a independência total entre variáveis é rara em problemas do mundo real. Mesmo quando subconjuntos de variáveis parecem independentes, podem existir relações complexas que exigem modelagens mais sofisticadas.
+
+Portanto, entender a independência e a independência condicional é essencial para a construção de modelos probabilísticos eficientes e realistas.
+
+---
+
 # Regra de Bayes, aplicações e modelo ingênuo
 # Redes Bayesianas
 # Inferência
