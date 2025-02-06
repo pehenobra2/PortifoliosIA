@@ -45,10 +45,6 @@ Imagine um agente de **Smart Taxi** encarregado de levar um passageiro ao aeropo
 
 Um plano determinístico, assumindo trânsito médio, recomendaria sair **às 19h30**. No entanto, ao considerar incertezas como chuva e acidentes, essa estratégia se torna arriscada. A abordagem probabilística permite calcular o risco e sugerir uma alternativa mais segura, como sair às **19h** ou até antes, reduzindo a probabilidade de atrasos.
 
-## Conclusão
-
-A teoria da probabilidade é uma ferramenta essencial para modelar a incerteza e fundamentar a tomada de decisão em ambientes complexos. Seja na economia, na medicina ou na logística de transportes, sistemas probabilísticos permitem lidar com o desconhecido de forma mais realista, ajustando previsões conforme novas evidências surgem. Em um mundo onde a incerteza é inevitável, a probabilidade se torna um pilar fundamental para a inteligência artificial, a ciência de dados e a tomada de decisões humanas.
-
 ---
 
 # Utilidade
@@ -66,7 +62,97 @@ Uma função de utilidade pode ser construída considerando qualquer conjunto de
 ---
 
 # Teoria de Decisão
-# Notação básica de probabilidade
+
+A Teoria da Decisão busca aplicar princípios racionais à tomada de decisões em cenários complexos e de alto risco. Essa abordagem é amplamente utilizada em diversas áreas, como negócios, governo, direito, estratégia militar, diagnóstico médico, saúde pública, engenharia e gestão de recursos. O processo envolve a avaliação sistemática das opções disponíveis e de seus possíveis desdobramentos, considerando as preferências e prioridades do tomador de decisões.
+
+## Papéis na Análise da Decisão
+Na Análise da Decisão, tradicionalmente se destacam dois papéis principais:
+1. **Tomador de Decisões**: Define suas preferências e estabelece prioridades entre os possíveis resultados.
+2. **Analista de Decisão**: Identifica as alternativas disponíveis e os possíveis desdobramentos, utilizando as preferências do tomador de decisões para determinar a melhor escolha.
+
+## Importância da Utilidade na Tomada de Decisão
+
+Um dos desafios na análise de decisão é diferenciar a probabilidade da importância de um evento. No contexto médico, por exemplo, os primeiros sistemas especialistas classificavam diagnósticos apenas com base na probabilidade, o que podia levar a erros críticos. Doenças raras, mas altamente perigosas, poderiam ser subestimadas.
+
+A incorporação do conceito de utilidade permite equilibrar a probabilidade de um diagnóstico com sua gravidade. Sistemas médicos modernos adotam essa abordagem para recomendar exames específicos e sugerir diagnósticos diferenciais, considerando não apenas a evidência disponível, mas também o valor das informações adquiridas.
+
+## Evolução da Teoria da Decisão
+
+A Teoria da Decisão continua a evoluir, sendo essencial para aprimorar processos automatizados e garantir que decisões – tomadas por humanos ou por sistemas inteligentes – sejam bem-informadas, racionais e alinhadas às necessidades específicas de cada situação.
+
+---
+
+# Notação Básica de Probabilidade
+
+A notação em probabilidade é fundamental para entender e resolver problemas estatísticos. A seguir, apresentamos os principais símbolos e seus significados.
+
+## Espaço Amostral
+O **espaço amostral** (\(S\)) é o conjunto de todos os possíveis resultados de um experimento, representado por:
+
+$$S = \{s_1, s_2, ..., s_n\}$$
+
+**Exemplo:** No lançamento de um dado de seis faces:
+
+$$S = \{1, 2, 3, 4, 5, 6\}$$
+
+## Eventos
+Um **evento** (\(E\)) é qualquer subconjunto do espaço amostral. Se o evento \(A\) representa a obtenção de um número par em um lançamento de dado, então:
+
+$$A = \{2, 4, 6\}$$
+
+## Probabilidade de um Evento
+A probabilidade de um evento \(A\) ocorrer é dada por:
+
+$$P(A) = \frac{|A|}{|S|}$$
+
+onde \(|A|\) é o número de elementos no evento e \(|S|\) o total de elementos no espaço amostral.
+
+**Exemplo:** A probabilidade de obter um número par ao lançar um dado justo:
+
+$$P(A) = \frac{3}{6} = 0.5$$
+
+## União e Interseção de Eventos
+- A **união** de dois eventos \(A\) e \(B\), denotada por \(A \cup B\), inclui todos os elementos pertencentes a \(A\), \(B\) ou ambos.
+- A **interseção** de \(A\) e \(B\), denotada por \(A \cap B\), contém os elementos comuns a ambos.
+
+Se tivermos:
+
+$$A = \{1, 2, 3\}, \quad B = \{3, 4, 5\}$$
+
+então:
+
+$$A \cup B = \{1, 2, 3, 4, 5\}$$  
+$$A \cap B = \{3\}$$
+
+## Eventos Mutuamente Exclusivos
+Dois eventos \(A\) e \(B\) são mutuamente exclusivos se **não possuem elementos em comum**, ou seja:
+
+$$A \cap B = \emptyset$$
+
+**Exemplo:** No lançamento de um dado, os eventos "obter um número par" e "obter um número ímpar" são mutuamente exclusivos.
+
+## Probabilidade Condicional
+A **probabilidade condicional** de \(A\) dado \(B\) é representada por \(P(A|B)\) e definida como:
+
+$$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
+
+desde que \(P(B) > 0\).
+
+**Exemplo:** Em um baralho de 52 cartas, a probabilidade de escolher um rei (\(K\)), sabendo que já foi selecionada uma carta de figuras (J, Q ou K), é:
+
+$$P(K|Figuras) = \frac{4/52}{12/52} = \frac{4}{12} = \frac{1}{3}$$
+
+## Regra da Multiplicação
+Para calcular a probabilidade de dois eventos \(A\) e \(B\) ocorrerem juntos, utilizamos:
+
+$$P(A \cap B) = P(A) P(B|A)$$
+
+Se \(A\) e \(B\) forem independentes:
+
+$$P(A \cap B) = P(A) P(B)$$
+
+---
+
 # Independência e Independência Condicional
 # Regra de Bayes, aplicações e modelo ingênuo
 # Redes Bayesianas
