@@ -1,2 +1,7 @@
 # Impressão Inicial
 
+Este conteúdo explora conceitos essenciais relacionados à quantificação de incertezas e ao uso de redes bayesianas em inteligência artificial. As redes bayesianas são ferramentas poderosas para representar e manipular incertezas, permitindo modelar relações probabilísticas entre variáveis de forma clara e eficiente. O raciocínio probabilístico ao longo do tempo, abordado neste contexto, mostra como as probabilidades podem evoluir à medida que novas informações são obtidas, ajudando os agentes a tomar decisões mais informadas.
+
+O uso de filtros de Kalman é detalhado como uma técnica específica para estimativa de estados em sistemas dinâmicos, especialmente quando as medições são ruidosas ou incompletas. Os filtros de Kalman são fundamentais em várias aplicações, desde a navegação de veículos até o processamento de sinais e controle de sistemas.
+
+A combinação dessas técnicas permite não apenas modelar incertezas, mas também realizar inferências sobre o estado atual de um sistema e prever seu comportamento futuro. O texto destaca as vantagens, como a capacidade de lidar com dados imprecisos e dinâmicos, e também as limitações, como a dependência de um modelo preciso para o desempenho adequado. Exemplos práticos, como o uso de filtros de Kalman em rastreamento de objetos, ilustram a aplicação dos conceitos discutidos, conectando teoria e prática de forma eficaz.
