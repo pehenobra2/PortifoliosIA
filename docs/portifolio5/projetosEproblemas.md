@@ -1,38 +1,33 @@
 # Análise de risco de Crédito com Redes Bayesianas
 
-A análise de risco de crédito é uma prática fundamental em instituições financeiras, como bancos e cooperativas de crédito, para avaliar a probabilidade de um cliente não pagar suas dívidas. Essa avaliação é crucial para a tomada de decisões sobre concessão de crédito, ajudando a minimizar perdas financeiras e a proteger a saúde da instituição.
+A análise de risco de crédito é uma prática essencial para instituições financeiras, como bancos e cooperativas de crédito, com o objetivo de avaliar a probabilidade de inadimplência de um cliente. Essa avaliação é crucial para minimizar perdas financeiras e garantir a sustentabilidade da instituição.
 
-O risco de crédito depende de uma série de fatores, como a situação financeira do cliente, seu histórico de crédito, sua renda, seu comportamento de pagamento anterior, entre outros. Tradicionalmente, métodos como análise estatística e modelos preditivos baseados em regressão ou aprendizado de máquina são usados para avaliar esse risco. No entanto, esses métodos podem ser limitados ao não considerar adequadamente a incerteza e a dependência entre variáveis.
+O risco de crédito depende de vários fatores, como a situação financeira do cliente, seu histórico de crédito, sua renda e seu comportamento de pagamento. Métodos tradicionais de análise incluem modelos estatísticos e técnicas de aprendizado de máquina, mas eles podem ser limitados ao não considerar adequadamente a incerteza e a interdependência entre variáveis.
 
-## Por que usar Redes Bayesianas na Análise de Risco de Crédito?
+## Vantagens do Uso de Redes Bayesianas na Análise de Risco de Crédito
 
-O uso de redes bayesianas para análise de risco de crédito apresenta uma série de vantagens significativas, principalmente em problemas em que a incerteza e as relações complexas entre as variáveis são cruciais para a tomada de decisão. Aqui estão as principais razões pelas quais as redes bayesianas são particularmente adequadas para este problema:
+As redes bayesianas oferecem vantagens significativas na análise de risco de crédito, pois modelam incertezas e relações complexas entre variáveis. Entre os principais benefícios, destacam-se:
 
 1. Modelagem de Incerteza
-A análise de risco de crédito lida com incertezas em várias formas: dados ausentes, ruído nos dados e variabilidade nas decisões de crédito. Redes bayesianas são ideais para lidar com incerteza, pois elas operam de forma probabilística, permitindo que você trabalhe com distribuições de probabilidade para representar a incerteza dos dados e eventos.
-Por exemplo, em uma rede bayesiana, você pode representar a probabilidade de inadimplência de um cliente, dado que algumas informações podem ser imprecisas ou incompletas, como quando um cliente tem um histórico de crédito parcialmente registrado ou sua renda não é declarada com precisão.
+Redes bayesianas operam de forma probabilística, permitindo representar incertezas associadas a dados ausentes, ruídos e variabilidades na decisão de crédito. Por exemplo, é possível estimar a probabilidade de inadimplência mesmo quando algumas informações do cliente são imprecisas ou incompletas.
 
 2. Capacidade de Representar Dependências entre Variáveis
-Uma das maiores vantagens das redes bayesianas é sua capacidade de capturar e representar as relações de dependência entre diferentes variáveis. No contexto de risco de crédito, várias variáveis influenciam a probabilidade de inadimplência de um cliente, como idade, histórico de crédito, renda, e outros fatores financeiros.
-As redes bayesianas permitem que essas relações complexas sejam modeladas de forma explícita. Isso significa que a inadimplência pode depender não apenas de uma variável isolada, como o histórico de crédito, mas de várias outras variáveis (renda, idade, etc.) simultaneamente. A rede bayesiana captura essas interdependências e pode calcular a probabilidade de inadimplência considerando todas essas variáveis de forma integrada.
+Diferentemente de modelos tradicionais, as redes bayesianas capturam interdependências entre variáveis como idade, histórico de crédito e renda, permitindo uma análise mais realista do risco de inadimplência.
 
 3. Inferência Probabilística
-Uma das funcionalidades chave das redes bayesianas é a capacidade de realizar inferência probabilística. Com uma rede bayesiana, você pode calcular a probabilidade de um evento (como inadimplência) dado um conjunto de evidências (como idade, histórico de crédito e renda). Isso é fundamental em análise de risco de crédito, onde a decisão de concessão de crédito deve ser baseada em probabilidades de um cliente pagar ou não sua dívida, com base nas informações disponíveis.
-Por exemplo, se você souber que um cliente tem 30 anos, possui um bom histórico de crédito, mas uma renda baixa, pode-se calcular a probabilidade de ele ser inadimplente. Isso proporciona uma base sólida para a tomada de decisões de crédito, ao invés de confiar em regras rígidas ou simples pontuações de crédito.
+Com redes bayesianas, é possível calcular a probabilidade de inadimplência com base em um conjunto de evidências, como idade, renda e histórico de crédito. Isso possibilita decisões de crédito mais informadas e personalizadas.
 
 4. Flexibilidade para Atualização com Novos Dados
-Em redes bayesianas, as probabilidades podem ser ajustadas à medida que novas informações se tornam disponíveis. Isso é uma vantagem significativa em um cenário como o de risco de crédito, onde as condições financeiras de um cliente podem mudar ao longo do tempo. Quando novos dados sobre o cliente (como uma alteração em sua renda ou no seu histórico de crédito) são obtidos, a rede bayesiana pode ser atualizada para refletir essas mudanças e recalcular a probabilidade de inadimplência de forma dinâmica.
-Isso ajuda a melhorar a precisão das previsões ao longo do tempo, adaptando-se às mudanças nos perfis dos clientes.
+As probabilidades nas redes bayesianas podem ser ajustadas dinamicamente à medida que novas informações são obtidas, tornando as previsões mais precisas ao longo do tempo.
 
 5. Interpretação Intuitiva
-As redes bayesianas são modelos interpretáveis. Cada variável e sua probabilidade associada são visíveis, o que permite aos analistas e tomadores de decisão entender claramente como as diferentes variáveis influenciam a probabilidade de inadimplência. Isso é particularmente importante em contextos financeiros, onde a transparência e a explicabilidade são essenciais para justificar decisões de crédito e para cumprir com regulamentações.
-A representação gráfica das redes bayesianas torna fácil entender as dependências entre as variáveis e como elas afetam o risco de crédito. Isso facilita a comunicação dos resultados da análise para partes interessadas não técnicas, como executivos e reguladores.
+As redes bayesianas são interpretáveis, tornando mais fácil compreender a influência das variáveis na probabilidade de inadimplência. Isso é essencial para transparência nas decisões de crédito e conformidade regulatória.
 
 6. Capacidade de Lidar com Dados Incompletos ou Parciais
-Em situações reais de análise de crédito, é comum que as informações sobre os clientes estejam incompletas ou desatualizadas. Por exemplo, pode faltar a renda de um cliente ou o histórico de crédito pode não estar totalmente registrado. Redes bayesianas têm a capacidade de lidar com dados incompletos de forma eficiente. Elas podem calcular as probabilidades mesmo quando algumas variáveis não estão disponíveis, utilizando as informações das variáveis observadas para preencher as lacunas de maneira probabilística.
+Redes bayesianas podem lidar com informações ausentes, inferindo valores prováveis com base em dados observados, o que as torna robustas para aplicações reais.
 
 7. Integração de Conhecimento Especializado
-Em muitos casos, a construção de um modelo de risco de crédito não depende apenas de dados históricos, mas também de conhecimento especializado do setor financeiro. Redes bayesianas oferecem uma forma intuitiva de incorporar esse conhecimento, pois podem incluir distribuições de probabilidade baseadas em experiências ou estimativas de especialistas, o que melhora a precisão do modelo e torna-o mais relevante para o contexto específico da instituição financeira.
+As redes bayesianas permitem incorporar conhecimento especializado do setor financeiro, combinando dados históricos com estimativas de especialistas para melhorar a acurácia das previsões.
 
 ## Como usar Redes Bayesianas para Análise de Risco de Crédito?
 
@@ -48,37 +43,49 @@ Para utilizar redes bayesianas na análise de risco de crédito, o processo pode
 4. **Inferir Probabilidades**: Depois de construir o modelo, você pode usar inferência bayesiana para calcular as probabilidades de inadimplência, dados outros fatores. A inferência permite que você determine a probabilidade de inadimplência de um cliente, dado seu perfil (idade, histórico de crédito, etc.), mesmo que nem todas as variáveis estejam completamente observadas.
 5. **Tomada de Decisão**: Com as probabilidades calculadas, as instituições financeiras podem tomar decisões informadas sobre se devem ou não conceder crédito ao cliente, além de definir o limite de crédito apropriado e as taxas de juros.
     
+## Implementação
 
-Instale a biblioteca necessária:
+O código implementa uma Rede Bayesiana usando a biblioteca pgmpy para modelar o risco de inadimplência de um indivíduo com base em três fatores:
+
+1. Idade (Jovem ou Adulto)
+2. Histórico de Crédito (Bom ou Ruim)
+3. Renda (Alta ou Baixa)
+
+O objetivo é calcular a probabilidade de inadimplência com base nesses fatores usando inferência probabilística.
+
+
+### Instalação necessária
 ```bash
-pip install pgmpy
+pip install pgmpy tabulate colorama
 ```
+### Código
 
 ```py
 from pgmpy.models import BayesianNetwork
 from pgmpy.factors.discrete import TabularCPD
 from pgmpy.inference import VariableElimination
+from tabulate import tabulate
+from colorama import Fore, Style
 
-# Definindo a estrutura da rede bayesiana
-model = BayesianNetwork([('Idade', 'Inadimplencia'),
-                         ('Historico_Credito', 'Inadimplencia'),
-                         ('Renda', 'Inadimplencia')])
+# Definição da estrutura da Rede Bayesiana
+model = BayesianNetwork([
+    ('Idade', 'Inadimplencia'),
+    ('Historico_Credito', 'Inadimplencia'),
+    ('Renda', 'Inadimplencia')
+])
 
-# Definindo as distribuições condicionais (CPD)
-cpd_idade = TabularCPD(variable='Idade', variable_card=2,
-                       values=[[0.7], [0.3]])  # 0: jovem, 1: adulto
+# Definição das distribuições condicionais (CPDs)
+cpd_idade = TabularCPD(variable='Idade', variable_card=2, values=[[0.7], [0.3]])  # 0: jovem, 1: adulto
+cpd_historico_credito = TabularCPD(variable='Historico_Credito', variable_card=2, values=[[0.8], [0.2]])  # 0: bom, 1: ruim
+cpd_renda = TabularCPD(variable='Renda', variable_card=2, values=[[0.6], [0.4]])  # 0: alta, 1: baixa
 
-cpd_historico_credito = TabularCPD(variable='Historico_Credito', variable_card=2,
-                                   values=[[0.8], [0.2]])  # 0: bom, 1: ruim
-
-cpd_renda = TabularCPD(variable='Renda', variable_card=2,
-                       values=[[0.6], [0.4]])  # 0: alta, 1: baixa
-
-cpd_inadimplencia = TabularCPD(variable='Inadimplencia', variable_card=2,
-                               values=[[0.9, 0.7, 0.8, 0.3],
-                                       [0.1, 0.3, 0.2, 0.7]],
-                               evidence=['Idade', 'Historico_Credito', 'Renda'],
-                               evidence_card=[2, 2, 2])
+cpd_inadimplencia = TabularCPD(
+    variable='Inadimplencia', variable_card=2,
+    values=[[0.95, 0.85, 0.80, 0.40, 0.70, 0.50, 0.30, 0.10],  # Probabilidades de NÃO ser inadimplente
+            [0.05, 0.15, 0.20, 0.60, 0.30, 0.50, 0.70, 0.90]], # Probabilidades de SER inadimplente
+    evidence=['Idade', 'Historico_Credito', 'Renda'],
+    evidence_card=[2, 2, 2]
+)
 
 # Adicionando as CPDs ao modelo
 model.add_cpds(cpd_idade, cpd_historico_credito, cpd_renda, cpd_inadimplencia)
@@ -89,21 +96,130 @@ assert model.check_model()
 # Criando o inferenciador
 inference = VariableElimination(model)
 
-# Exemplo de inferência: qual é a probabilidade de inadimplência dado que a pessoa tem 30 anos (Idade = 1), tem um bom histórico de crédito (Historico_Credito = 0) e tem baixa renda (Renda = 1)?
-probabilidade_inadimplencia = inference.query(variables=['Inadimplencia'],
-                                              evidence={'Idade': 1, 'Historico_Credito': 0, 'Renda': 1})
+# Função para calcular e exibir os resultados formatados
+def calcular_inadimplencia(idade, historico_credito, renda):
+    resultado = inference.query(
+        variables=['Inadimplencia'],
+        evidence={'Idade': idade, 'Historico_Credito': historico_credito, 'Renda': renda}
+    )
 
-print(probabilidade_inadimplencia)
+    # Convertendo os valores para exibição
+    valores = resultado.values
+    dados = [
+        ["Não Inadimplente (0)", f"{valores[0]:.2%}"],
+        ["Inadimplente (1)", f"{valores[1]:.2%}"]
+    ]
+
+    # Exibindo os resultados
+    print(Fore.CYAN + "\n========================================")
+    print(f"🎯 Cenário: Idade={idade}, Histórico de Crédito={historico_credito}, Renda={renda}")
+    print("========================================" + Style.RESET_ALL)
+    print(tabulate(dados, headers=["Situação", "Probabilidade"], tablefmt="grid"))
+
+# Testando diferentes cenários
+cenarios = [
+    (1, 0, 1),  # Adulto, Bom histórico de crédito, Baixa renda
+    (0, 1, 1),  # Jovem, Histórico de crédito ruim, Baixa renda
+    (1, 1, 0),  # Adulto, Histórico de crédito ruim, Alta renda
+    (0, 0, 0),  # Jovem, Bom histórico de crédito, Alta renda
+    (1, 1, 1),  # Adulto, Histórico de crédito ruim, Baixa renda
+]
+
+for cenario in cenarios:
+    calcular_inadimplencia(*cenario)
+
 ```
+**Explicação do Código:**
 
-Explicação do Código:
-1. Modelo e Estrutura: A rede bayesiana é composta pelas variáveis Idade, Historico_Credito, Renda e Inadimplencia. A estrutura da rede define como essas variáveis se relacionam (por exemplo, a Inadimplencia depende de todas as outras variáveis).
+1. Criamos a estrutura da Rede Bayesiana, onde Inadimplência depende de Idade, Histórico de Crédito e Renda.
+2. Definimos as distribuições condicionais (CPDs) para cada variável.
+3. Validamos o modelo.
+4. Criamos um algoritmo de inferência Bayesiana para calcular probabilidades condicionais.
+5. Executamos cenários diferentes para entender como os fatores influenciam a inadimplência.
 
-2. Distribuições Condicionais (CPD): Para cada variável, definimos as distribuições condicionais (CPDs). As CPDs representam a probabilidade de uma variável, dado o estado das variáveis anteriores. Por exemplo, a probabilidade de inadimplência pode depender da idade, do histórico de crédito e da renda de uma pessoa.
+## Resultados
 
-3. Inferência: Usamos o inferenciador VariableElimination para calcular a probabilidade de inadimplência dado um conjunto de evidências (por exemplo, uma pessoa adulta, com bom histórico de crédito e baixa renda).
+### Consulta 1
+![image](https://github.com/user-attachments/assets/2152e8fa-f57b-4edb-a301-bef12b64efe3)
 
-Como Funciona:
-Ao rodar o código, o programa calculará a probabilidade de inadimplência dado que uma pessoa tem 30 anos, bom histórico de crédito e baixa renda. Isso pode ser útil na análise de risco de crédito para determinar a probabilidade de uma pessoa não pagar uma dívida com base em seu perfil.
+Neste cenário, temos:
+- Idade = 1 (Adulto)
+- Histórico de Crédito = 0 (Bom)
+- Renda = 1 (Baixa)
 
-Se precisar de ajustes no modelo ou na análise, ou se tiver mais variáveis para incluir, é só avisar!
+A probabilidade de não inadimplência e inadimplência é exatamente 50% para cada.
+
+Interpretação:
+
+O modelo indica incerteza neste caso, pois os fatores se equilibram. Apesar do bom histórico de crédito (que reduz o risco de inadimplência), a renda baixa aumenta essa probabilidade. Como resultado, não há uma tendência clara, e o risco é dividido igualmente.
+
+### Consulta 2
+![image](https://github.com/user-attachments/assets/f57857c7-a99e-40fa-8078-a0989a0ed010)
+
+Neste cenário, temos:
+- Idade = 0 (Jovem)
+- Histórico de Crédito = 1 (Ruim)
+- Renda = 1 (Baixa)
+
+A probabilidade de não inadimplência é 40%, enquanto a de inadimplência é 60%.
+
+Interpretação:
+
+Aqui, a inadimplência tem uma probabilidade maior do que a não inadimplência. Isso ocorre porque o indivíduo é jovem, tem um histórico de crédito ruim e uma renda baixa — todos esses fatores contribuem para um maior risco de não conseguir pagar suas dívidas.
+
+### Consulta 3
+![image](https://github.com/user-attachments/assets/e89b6140-fc5d-40df-a06d-1b3fb1c1e27c)
+
+Neste cenário, temos:
+- Idade = 1 (Adulto)
+- Histórico de Crédito = 1 (Ruim)
+- Renda = 0 (Alta)
+
+A probabilidade de não inadimplência é 30%, enquanto a de inadimplência é 70%.
+
+Interpretação:
+
+Mesmo tendo renda alta, o fato de ter um histórico de crédito ruim pesa mais na análise. Isso sugere que a inadimplência passada ou o mau histórico financeiro são mais importantes para prever o risco de inadimplência do que o nível de renda atual.
+
+### Consulta 4
+![image](https://github.com/user-attachments/assets/e425e582-7750-4e5f-a4df-0116ddf425a2)
+
+Neste cenário, temos:
+- Idade = 0 (Jovem)
+- Histórico de Crédito = 0 (Bom)
+- Renda = 0 (Alta)
+
+A probabilidade de não inadimplência é 95%, enquanto a de inadimplência é apenas 5%.
+
+Interpretação:
+
+Esse é o perfil mais seguro analisado. Um jovem com bom histórico de crédito e renda alta tem pouquíssima chance de se tornar inadimplente. Isso confirma que um bom histórico de crédito e uma renda confortável são os melhores indicadores para evitar inadimplência.
+
+### Consulta 5
+![image](https://github.com/user-attachments/assets/b7807f9a-b32c-405c-aeec-42b122727bf6)
+
+Neste cenário, temos:
+- Idade = 1 (Adulto)
+- Histórico de Crédito = 1 (Ruim)
+- Renda = 1 (Baixa)
+
+A probabilidade de não inadimplência é 10%, enquanto a de inadimplência é 90%.
+
+Interpretação:
+
+Este é o perfil mais arriscado. A combinação de histórico de crédito ruim e baixa renda resulta em um risco altíssimo de inadimplência. Esse resultado sugere que instituições financeiras deveriam ter muita cautela ao conceder crédito para pessoas com esse perfil.
+
+## Conclusão
+
+Os resultados mostram como a interação entre idade, histórico de crédito e renda influencia a probabilidade de inadimplência.
+
+Fatores mais impactantes:
+1.  Histórico de Crédito: Ter um histórico ruim aumenta muito o risco de inadimplência, independentemente da idade ou renda.
+2.  Renda: Uma renda baixa aumenta a probabilidade de inadimplência, mas não tanto quanto um histórico ruim.
+3.  Idade: Ter idade adulta não garante segurança financeira, o histórico de crédito e a renda são mais relevantes.
+
+Aplicação Prática: Bancos e financeiras podem usar esse modelo para avaliar melhor seus clientes e evitar concessões de crédito de alto risco.
+
+
+
+
