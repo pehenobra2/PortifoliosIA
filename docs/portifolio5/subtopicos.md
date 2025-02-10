@@ -442,27 +442,9 @@ O Filtro de Kalman baseia-se em um modelo matemático que descreve a evolução 
 
 O Filtro de Kalman opera de forma iterativa em dois passos principais:
 
-1. **Previsão (Predição)**: Estima o estado futuro do sistema e a incerteza associada:
-   
-   $$\hat{x}_k^- = A \hat{x}_{k-1} + B u_k$$
-   $$P_k^- = A P_{k-1} A^T + Q$$
-   
-   onde:
-   - $\hat{x}_k^-$ é a estimativa a priori do estado,
-   - $P_k^-$ é a matriz de covariância do erro da estimativa,
-   - $Q$ é a matriz de covariância do ruído do processo.
+1. **Previsão (Predição)**: Estima o estado futuro do sistema e a incerteza associada.
 
-2. **Atualização (Correção)**: Ajusta a estimativa com base na nova medição:
-   
-   $$K_k = P_k^- H^T (H P_k^- H^T + R)^{-1}$$
-   $$\hat{x}_k = \hat{x}_k^- + K_k (z_k - H \hat{x}_k^-)$$
-   $$P_k = (I - K_k H) P_k^-$$
-   
-   onde:
-   - $K_k$ é o ganho de Kalman, que determina o peso da nova medição,
-   - $R$ é a matriz de covariância do ruído da medição,
-   - $\hat{x}_k$ é a estimativa corrigida do estado,
-   - $P_k$ é a matriz de covariância do erro atualizado.
+2. **Atualização (Correção)**: Ajusta a estimativa com base na nova medição.
 
 ## Aplicações do Filtro de Kalman
 
