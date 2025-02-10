@@ -1,4 +1,4 @@
-# Análise de risco de Crédito com Redes Bayesianas
+# Análise de Risco de Crédito com Redes Bayesianas
 
 A análise de risco de crédito é uma prática essencial para instituições financeiras, como bancos e cooperativas de crédito, com o objetivo de avaliar a probabilidade de inadimplência de um cliente. Essa avaliação é crucial para minimizar perdas financeiras e garantir a sustentabilidade da instituição.
 
