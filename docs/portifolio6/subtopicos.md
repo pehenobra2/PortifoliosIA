@@ -6,6 +6,8 @@ Essa abordagem revolucionou diversas áreas, possibilitando que computadores rea
 
 O avanço dessa tecnologia tem sido impulsionado pelo crescimento exponencial da capacidade computacional, pelo acesso a grandes volumes de dados e pelo desenvolvimento de algoritmos cada vez mais sofisticados. Com isso, o aprendizado de máquina se tornou uma ferramenta indispensável para a automação de processos, a extração de insights estratégicos e a criação de soluções inovadoras em diversos setores da indústria e da ciência.
 
+---
+
 # TIPOS DE APRENDIZADO DE MÁQUINA
 
 O Aprendizado de Máquina pode ser classificado em três principais categorias, dependendo da forma como os dados são utilizados para treinar os modelos: aprendizado supervisionado, aprendizado não supervisionado e aprendizado por reforço. Cada uma dessas categorias possui características específicas e é aplicada a diferentes problemas.
