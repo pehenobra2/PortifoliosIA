@@ -128,18 +128,29 @@ Em resumo, tanto as redes neurais quanto o aprendizado profundo representam avan
 
 # Explainable Artificial Intelligence (XAI)
 
-A Explainable Artificial Intelligence (XAI) é um conceito fundamental no desenvolvimento de modelos de IA, pois visa permitir que os usuários compreendam e confiem nas decisões feitas por algoritmos de aprendizado de máquina. A XAI é crucial para mitigar os problemas associados aos chamados modelos de "caixa preta", que, muitas vezes, são difíceis de interpretar, mesmo pelos próprios criadores dos algoritmos. Além de garantir maior transparência e confiabilidade, a XAI também facilita a conformidade com regulamentos e assegura que decisões automatizadas possam ser auditadas e ajustadas, quando necessário (IBM, 2025).
+A Inteligência Artificial Explicável (XAI) é um conceito essencial no desenvolvimento de modelos de IA, pois visa tornar as decisões tomadas por algoritmos de aprendizado de máquina mais compreensíveis e transparentes para os usuários. Tradicionalmente, muitos modelos de IA, especialmente os mais complexos, são frequentemente chamados de "caixas pretas". Isso significa que, embora esses modelos possam produzir resultados impressionantes, sua lógica interna pode ser difícil de entender até mesmo para os desenvolvedores que os criaram. A XAI busca resolver esse problema ao permitir que os usuários compreendam como e por que as decisões são tomadas, criando uma "explicação" acessível sobre o funcionamento interno do algoritmo.
+
+Além de aumentar a transparência e a confiabilidade dos sistemas de IA, a XAI é crucial para o cumprimento de regulamentações e auditorias. Em setores como o financeiro e o de saúde, por exemplo, é essencial que as decisões automatizadas possam ser auditadas para garantir que não haja discriminação ou erros que possam prejudicar os usuários. O uso de técnicas de XAI facilita a interpretação dos modelos e ajuda as empresas a ajustarem seus sistemas conforme necessário, promovendo maior responsabilidade e ética no uso da IA (IBM, 2025).
 
 ---
 
 # Algoritmos de aprendizado não supervisionado
 
 ## K-means Clustering
-O algoritmo K-means é uma técnica popular de aprendizado não supervisionado que busca agrupar dados em clusters com base na proximidade dos pontos em relação aos centroides. Ele utiliza a distância euclidiana para determinar a similaridade entre os pontos e seus centroides, dividindo-os em grupos distintos. A inicialização dos centroides é crítica e pode ser otimizada com técnicas como o k-means++. O objetivo do algoritmo é minimizar a inércia, que mede a compactação dos clusters, e é avaliado por métricas como o índice de Dunn, que compara a distância entre clusters distintos (IBM, 2025).
+
+O algoritmo K-means é uma das técnicas mais utilizadas em aprendizado não supervisionado, que tem como objetivo agrupar dados em clusters (ou grupos) com base na proximidade dos pontos em relação aos centroides. Um centroide é um ponto representativo de cada cluster, geralmente calculado como a média dos pontos do grupo. O algoritmo usa a distância euclidiana para medir a proximidade entre os pontos e seus respectivos centroides, garantindo que os dados semelhantes sejam agrupados juntos.
+
+A inicialização dos centroides é uma etapa crítica para o sucesso do K-means, pois uma escolha inadequada pode levar a um agrupamento subótimo. Técnicas como o k-means++ ajudam a melhorar essa inicialização, escolhendo centroides iniciais mais adequados, o que pode resultar em uma melhor convergência e menor inércia.
+
+A inércia é uma métrica que mede a compactação dos clusters. O objetivo do K-means é minimizar essa inércia, ou seja, garantir que os pontos dentro de cada cluster estejam o mais próximos possível do centroide. Para avaliar a qualidade dos clusters, podemos usar o índice de Dunn, que verifica a distância entre clusters diferentes, buscando maximizar a distância entre eles e minimizar a distância dentro de cada cluster. Esse algoritmo é amplamente utilizado em tarefas de segmentação de mercado, agrupamento de usuários e outras aplicações onde é necessário identificar padrões ocultos nos dados (IBM, 2025).
 
 ## Self-organized Maps
 
-Os Self-Organized Maps (SOM), ou Mapas Auto-Organizáveis, são uma técnica de aprendizado não supervisionado baseada na rede neural que visa mapear dados de alta dimensionalidade em uma grade de unidades de menor dimensionalidade. Os SOMs são particularmente úteis para visualizar dados complexos, agrupando pontos de dados semelhantes em regiões próximas da rede. A principal característica desse algoritmo é a sua capacidade de preservar as relações topológicas dos dados, ou seja, pontos de dados similares ficam próximos no mapa, facilitando a análise e a interpretação dos resultados. Além disso, SOMs são frequentemente usados em áreas como reconhecimento de padrões, visualização de dados e análise exploratória de dados.
+Os Self-Organized Maps (SOM), ou Mapas Auto-Organizáveis, são uma técnica de aprendizado não supervisionado que utiliza uma rede neural para mapear dados de alta dimensionalidade para uma grade de menor dimensionalidade. A principal vantagem dos SOMs é a sua capacidade de preservar as relações topológicas dos dados, ou seja, pontos de dados semelhantes são agrupados em regiões próximas dentro da grade. Essa propriedade é particularmente útil para visualização de dados complexos, permitindo que grandes volumes de dados sejam representados de maneira intuitiva e fácil de interpretar.
+
+Uma característica marcante dos SOMs é que, ao serem treinados, eles organizam os dados de forma que os padrões e relações subjacentes entre as variáveis sejam evidentes no mapa resultante. Isso facilita a análise exploratória de dados, já que a disposição dos pontos no mapa pode revelar estruturas de agrupamento ou hierarquias que não seriam facilmente visíveis em um conjunto de dados de alta dimensão.
+
+SOMs são frequentemente usados em áreas como reconhecimento de padrões, visualização de dados e análise exploratória de dados. Sua aplicação se estende a diversas áreas, como segmentação de clientes, identificação de padrões em imagens e até mesmo na análise de dados biomédicos.
 
 ---
 
@@ -147,21 +158,13 @@ Os Self-Organized Maps (SOM), ou Mapas Auto-Organizáveis, são uma técnica de 
 
 ## Q-Learning
 
-O Q-Learning é um algoritmo de aprendizado por reforço que busca aprender a política ótima de um agente em um ambiente. Através de interações com o ambiente, o algoritmo atualiza uma tabela de Q-valores que representam a recompensa esperada para cada ação tomada em um estado específico. A atualização dos valores é realizada utilizando a equação de Bellman, que ajusta os Q-valores com base na recompensa imediata e nas recompensas futuras esperadas. Isso permite que o agente tome decisões mais informadas e aprenda a maximizar a recompensa ao longo do tempo.
+O Q-Learning é um algoritmo de aprendizado por reforço, utilizado para treinar um agente a tomar decisões em um ambiente dinâmico com o objetivo de maximizar uma recompensa acumulada ao longo do tempo. Diferente de outros métodos de aprendizado, o Q-learning não exige um modelo prévio do ambiente e, em vez disso, o agente aprende interagindo com ele, ajustando suas ações conforme a recompensa recebida.
+
+Durante o processo, o agente mantém uma tabela de Q-valores, onde cada valor representa a recompensa esperada para uma determinada ação em um estado específico. Esses Q-valores são atualizados a cada interação com o ambiente, utilizando a equação de Bellman, que combina a recompensa imediata obtida e a recompensa futura esperada, ajustando as expectativas do agente sobre qual ação tomar.
+
+O objetivo do Q-Learning é encontrar a política ótima, ou seja, uma sequência de ações que maximize a recompensa total ao longo do tempo. Essa abordagem é amplamente aplicada em jogos, robótica, controle de sistemas e outras áreas em que a tomada de decisões sequenciais é necessária. O algoritmo permite que o agente se adapte ao longo do tempo, aprendendo com as recompensas e penalidades, sem a necessidade de supervisão direta.
 
 ---
 
 
-## REFERÊNCIAS
 
-- HASTIE, T.; TIBSHIRANI, R.; FRIEDMAN, J. *The Elements of Statistical Learning: Data Mining, Inference, and Prediction*. 2. ed. New York: Springer, 2009.
-- CHOMBOON, Kittipong et al. Um estudo empírico de métricas de distância para o algoritmo k-vizinho mais próximo. In: Anais da 3ª Conferência Internacional sobre Engenharia de Aplicação Industrial. 2015. p. 4.
-- BENGIO, Yoshua. Learning Deep Architectures for AI. *Foundations and Trends in Machine Learning*, v. 2, n. 1, p. 1–127, 2009.
-- BIANCHINI, João. *Redes Neurais Artificiais: O modelo de neurônio biológico e suas aplicações*. 2004.
-- HAYKIN, Simon. *Neural Networks: A Comprehensive Foundation*. 2. ed. Upper Saddle River: Prentice Hall, 2001.
-- JOST, Michael. *Deep Learning and Applications: A New Era of Intelligent Systems*. 2015.
-- NETO, José de Almeida. *Redes Neurais: Princípios e Aplicações*. 2015.
-- PONTI, Marco; COSTA, Antonio. *Deep Learning: A Powerful Tool for Artificial Intelligence*. Springer, 2017.
-- YANG, Xin. *Non-Supervised Learning: Challenges and Approaches*. Springer, 2013.
-- IBM. O que é IA explicável (XAI)? IBM, 2025. Disponível em: <https://www.ibm.com/br-pt/topics/explainable-ai>. Acesso em: 18 fev. 2025.
-- IBM. O que é o agrupamento K-means? Disponível em: <https://www.ibm.com/br-pt/topics/k-means-clustering>. Acesso em: 18 fev. 2025.
