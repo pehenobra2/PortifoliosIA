@@ -1,2 +1,2 @@
-# Discussões
+# Tipos de Redes Neurais
 
