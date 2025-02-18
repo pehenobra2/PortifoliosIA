@@ -1,16 +1,14 @@
-# Aprendizado de Máquina
+# APRENDIZADO DE MÁQUINA
 
-Aprendizado de Máquina (Machine Learning) é um ramo da Inteligência Artificial que se concentra no desenvolvimento de sistemas capazes de aprender com dados e melhorar seu desempenho ao longo do tempo, sem a necessidade de programação explícita para cada situação. Em vez de depender de um conjunto fixo de regras predefinidas, os modelos de aprendizado de máquina identificam padrões, fazem previsões e ajustam seus resultados conforme recebem novos dados, tornando-se mais precisos e eficientes.
+O Aprendizado de Máquina (Machine Learning) é um campo da Inteligência Artificial (IA) que se dedica ao desenvolvimento de sistemas capazes de aprender a partir de dados e aprimorar seu desempenho ao longo do tempo, sem a necessidade de programação explícita para cada situação. Em vez de depender de um conjunto fixo de regras predefinidas, os modelos de aprendizado de máquina identificam padrões, fazem previsões e ajustam seus resultados à medida que recebem novos dados, tornando-se mais precisos e eficientes.
 
-Essa abordagem revolucionou diversas áreas, permitindo que computadores realizem tarefas complexas que antes exigiam intervenção humana. Entre suas aplicações mais comuns, destacam-se o reconhecimento de voz e imagem, sistemas de recomendação personalizados (como os utilizados por plataformas de streaming e e-commerce), detecção de fraudes em transações financeiras e até a condução autônoma de veículos.
+Essa abordagem revolucionou diversas áreas, possibilitando que computadores realizem tarefas complexas que antes requeriam intervenção humana. Entre suas aplicações mais comuns, destacam-se o reconhecimento de voz e imagem, sistemas de recomendação personalizados (como os utilizados por plataformas de streaming e e-commerce), detecção de fraudes em transações financeiras e até a condução autônoma de veículos.
 
 O avanço dessa tecnologia tem sido impulsionado pelo crescimento exponencial da capacidade computacional, pelo acesso a grandes volumes de dados e pelo desenvolvimento de algoritmos cada vez mais sofisticados. Com isso, o aprendizado de máquina se tornou uma ferramenta indispensável para a automação de processos, a extração de insights estratégicos e a criação de soluções inovadoras em diversos setores da indústria e da ciência.
 
----
+# TIPOS DE APRENDIZADO DE MÁQUINA
 
-# Tipos de aprendizados de máquina
-
-O Aprendizado de Máquina pode ser classificado em três principais categorias, dependendo da forma como os dados são utilizados para treinar os modelos: aprendizado supervisionado, aprendizado não supervisionado e aprendizado por reforço. Cada um desses tipos possui características específicas e é aplicado a diferentes problemas.
+O Aprendizado de Máquina pode ser classificado em três principais categorias, dependendo da forma como os dados são utilizados para treinar os modelos: aprendizado supervisionado, aprendizado não supervisionado e aprendizado por reforço. Cada uma dessas categorias possui características específicas e é aplicada a diferentes problemas.
 
 ## Aprendizado supervisionado
 
@@ -68,8 +66,6 @@ Hastie, Tibshirani e Friedman (2009) também discutem dois desafios críticos no
 
 # Algoritmos de aprendizado supervisionado
 
-O aprendizado supervisionado é uma abordagem do aprendizado de máquina na qual um modelo é treinado a partir de um conjunto de dados rotulado, ou seja, cada entrada do treinamento possui um rótulo correspondente que representa sua classificação correta. Dessa forma, o modelo aprende a associar padrões nos dados às respostas esperadas, permitindo a realização de previsões em novas amostras.
-
 ## K-Nearest Neighbors
 
 O algoritmo **k-nearest neighbors (KNN)** é um dos métodos mais simples e eficazes no aprendizado supervisionado. Ele funciona com base na similaridade entre os dados, classificando uma nova amostra com base nas **k** amostras mais próximas dentro do conjunto de treinamento. A proximidade entre os pontos é determinada por uma métrica de distância, sendo a **distância euclidiana** uma das mais utilizadas.
@@ -114,17 +110,34 @@ Os classificadores bayesianos são amplamente utilizados em aplicações como **
 ---
 # Redes Neurais e aprendizado profundo
 
+As Redes Neurais (RNs) são sistemas computacionais inspirados no funcionamento do cérebro humano, desenvolvidos para executar tarefas cognitivas como reconhecimento de padrões, percepção e controle motor. Esses modelos são baseados nos neurônios biológicos, que estão organizados de maneira eficiente para processar informações de forma paralela e não linear. Segundo Haykin (2001), o cérebro humano organiza seus neurônios de maneira que permite a execução de tarefas complexas de forma mais rápida e eficiente do que sistemas computacionais tradicionais. As RNs buscam emular essa estrutura, utilizando componentes eletrônicos ou programas de computador para realizar funções semelhantes às do cérebro (NETO, 2015).
+
+O funcionamento de uma RNA baseia-se em unidades de processamento chamadas neurônios artificiais, que imitam os neurônios biológicos. Cada neurônio artificial recebe entradas, atribui pesos sinápticos, possui um somador (bias) e aplica uma função de ativação. As entradas são multiplicadas pelos pesos sinápticos, e a soma resultante é passada pela função de ativação, que limita a amplitude da saída do neurônio. Essa estrutura permite que as RNAs se ajustem durante o treinamento, aplicando aprendizado supervisionado ou não supervisionado e otimizando os pesos sinápticos para melhorar a precisão das previsões (HAYKIN, 2001; BIANCHINI, 2004).
+
+O Deep Learning (Aprendizado Profundo) emergiu como uma extensão das redes neurais, abordando desafios relacionados ao processamento de grandes volumes de dados com alta dimensionalidade. Essa técnica se destaca em tarefas como o reconhecimento de imagens, áudio e texto, sendo amplamente aplicada em grandes empresas como Google, Microsoft e Baidu, que a utilizam em inovações como carros autônomos, motores de busca aprimorados e reconhecimento visual (JOST, 2015).
+
+Uma das características essenciais do Deep Learning é a sua capacidade de aprender representações hierárquicas de dados. Bengio (2009) descreve que redes profundas são formadas por várias camadas, onde cada camada aprende representações mais abstratas e complexas dos dados em comparação com a camada anterior. Essa estrutura permite que redes profundas detectem padrões e características de alto nível, representando um avanço significativo em relação às abordagens anteriores de aprendizado supervisionado, que se concentravam em aprender uma única função com um conjunto de parâmetros.
+
+A principal diferença entre Deep Learning e Machine Learning (Aprendizado de Máquina) está no tipo de função que cada uma aprende. Técnicas tradicionais de aprendizado de máquina são frequentemente chamadas de “rasas” (shallow) e buscam aprender uma função simples que transforma os dados de entrada em um resultado. Por outro lado, o Deep Learning utiliza várias camadas para compor funções complexas, permitindo uma transformação gradual e cada vez mais refinada dos dados, o que é especialmente útil para lidar com grandes volumes de dados não estruturados (PONTI; COSTA, 2017).
+
+Em resumo, tanto as redes neurais quanto o aprendizado profundo representam avanços significativos nas técnicas de aprendizado de máquina. Ao simular o comportamento dos neurônios biológicos e aplicar múltiplas camadas de processamento, essas abordagens têm se mostrado fundamentais em uma ampla gama de aplicações, como reconhecimento de voz, imagens e até na condução autônoma de veículos.
+
 ---
 
-# ExplainableArtificial Intelligence (XAI)
+# Explainable Artificial Intelligence (XAI)
+
+A Explainable Artificial Intelligence (XAI) é um conceito fundamental no desenvolvimento de modelos de IA, pois visa permitir que os usuários compreendam e confiem nas decisões feitas por algoritmos de aprendizado de máquina. A XAI é crucial para mitigar os problemas associados aos chamados modelos de "caixa preta", que, muitas vezes, são difíceis de interpretar, mesmo pelos próprios criadores dos algoritmos. Além de garantir maior transparência e confiabilidade, a XAI também facilita a conformidade com regulamentos e assegura que decisões automatizadas possam ser auditadas e ajustadas, quando necessário (IBM, 2025).
 
 ---
 
 # Algoritmos de aprendizado não supervisionado
 
 ## K-means Clustering
+O algoritmo K-means é uma técnica popular de aprendizado não supervisionado que busca agrupar dados em clusters com base na proximidade dos pontos em relação aos centroides. Ele utiliza a distância euclidiana para determinar a similaridade entre os pontos e seus centroides, dividindo-os em grupos distintos. A inicialização dos centroides é crítica e pode ser otimizada com técnicas como o k-means++. O objetivo do algoritmo é minimizar a inércia, que mede a compactação dos clusters, e é avaliado por métricas como o índice de Dunn, que compara a distância entre clusters distintos (IBM, 2025).
+
 ## Self-organized Maps
 
+Os Self-Organized Maps (SOM), ou Mapas Auto-Organizáveis, são uma técnica de aprendizado não supervisionado baseada na rede neural que visa mapear dados de alta dimensionalidade em uma grade de unidades de menor dimensionalidade. Os SOMs são particularmente úteis para visualizar dados complexos, agrupando pontos de dados semelhantes em regiões próximas da rede. A principal característica desse algoritmo é a sua capacidade de preservar as relações topológicas dos dados, ou seja, pontos de dados similares ficam próximos no mapa, facilitando a análise e a interpretação dos resultados. Além disso, SOMs são frequentemente usados em áreas como reconhecimento de padrões, visualização de dados e análise exploratória de dados.
 
 ---
 
@@ -132,15 +145,21 @@ Os classificadores bayesianos são amplamente utilizados em aplicações como **
 
 ## Q-Learning
 
+O Q-Learning é um algoritmo de aprendizado por reforço que busca aprender a política ótima de um agente em um ambiente. Através de interações com o ambiente, o algoritmo atualiza uma tabela de Q-valores que representam a recompensa esperada para cada ação tomada em um estado específico. A atualização dos valores é realizada utilizando a equação de Bellman, que ajusta os Q-valores com base na recompensa imediata e nas recompensas futuras esperadas. Isso permite que o agente tome decisões mais informadas e aprenda a maximizar a recompensa ao longo do tempo.
+
+---
 
 
+## REFERÊNCIAS
 
-
-
-
-
-
-## Referências
-
-- HASTIE, T.; TIBSHIRANI, R.; FRIEDMAN, J. The Elements of Statistical Learning: Data Mining, Inference, and Prediction. 2. ed. New York: Springer, 2009.
+- HASTIE, T.; TIBSHIRANI, R.; FRIEDMAN, J. *The Elements of Statistical Learning: Data Mining, Inference, and Prediction*. 2. ed. New York: Springer, 2009.
 - CHOMBOON, Kittipong et al. Um estudo empírico de métricas de distância para o algoritmo k-vizinho mais próximo. In: Anais da 3ª Conferência Internacional sobre Engenharia de Aplicação Industrial. 2015. p. 4.
+- BENGIO, Yoshua. Learning Deep Architectures for AI. *Foundations and Trends in Machine Learning*, v. 2, n. 1, p. 1–127, 2009.
+- BIANCHINI, João. *Redes Neurais Artificiais: O modelo de neurônio biológico e suas aplicações*. 2004.
+- HAYKIN, Simon. *Neural Networks: A Comprehensive Foundation*. 2. ed. Upper Saddle River: Prentice Hall, 2001.
+- JOST, Michael. *Deep Learning and Applications: A New Era of Intelligent Systems*. 2015.
+- NETO, José de Almeida. *Redes Neurais: Princípios e Aplicações*. 2015.
+- PONTI, Marco; COSTA, Antonio. *Deep Learning: A Powerful Tool for Artificial Intelligence*. Springer, 2017.
+- YANG, Xin. *Non-Supervised Learning: Challenges and Approaches*. Springer, 2013.
+- IBM. O que é IA explicável (XAI)? IBM, 2025. Disponível em: <https://www.ibm.com/br-pt/topics/explainable-ai>. Acesso em: 18 fev. 2025.
+- IBM. O que é o agrupamento K-means? Disponível em: <https://www.ibm.com/br-pt/topics/k-means-clustering>. Acesso em: 18 fev. 2025.
