@@ -112,6 +112,84 @@ Os Processos Gaussianos são ferramentas poderosas para modelagem probabilístic
 
 ---
 
-## Algoritmo de Aprendizado não supervisionado; 
+## DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+
+O DBSCAN (Density-Based Spatial Clustering of Applications with Noise) é um algoritmo de agrupamento baseado em densidade, amplamente utilizado para identificar padrões e estruturas em conjuntos de dados complexos. Ele é particularmente útil para detectar clusters de formas arbitrárias e lidar com ruídos (outliers) sem a necessidade de especificar o número de clusters previamente, como ocorre com o K-Means.
+
+### Como o DBSCAN Funciona?
+
+O DBSCAN classifica os pontos do conjunto de dados em três categorias:
+
+1. Pontos Centrais (Core Points): pontos que possuem pelo menos um número mínimo (minPts) de vizinhos dentro de uma distância máxima (epsilon).
+2. Pontos de Borda (Border Points): pontos que não possuem vizinhos suficientes para serem pontos centrais, mas estão dentro do alcance de um ponto central.
+3. Ruídos (Outliers): pontos que não pertencem a nenhum cluster, pois não satisfazem as condições anteriores.
+
+O algoritmo funciona da seguinte maneira:
+
+1. Escolhe um ponto aleatório ainda não visitado.
+2. Se ele for um ponto central, inicia um novo cluster e expande a busca pelos vizinhos.
+3. Se for um ponto de borda, ele é adicionado ao cluster mais próximo.
+4. Se for um outlier, é marcado como ruído.
+5. Repete o processo até todos os pontos serem visitados.
+
+### Vantagens e Aplicações do DBSCAN
+
+O DBSCAN tem várias vantagens em relação a outros algoritmos de agrupamento, como o K-Means:
+- Detecta clusters de forma arbitrária: enquanto o K-Means assume clusters esféricos, o DBSCAN pode identificar grupos de qualquer formato.
+- Não exige número de clusters pré-definido: o número de clusters emerge dos próprios dados.
+- Robusto contra outliers: pontos ruidosos são identificados e não influenciam os clusters.
+
+O DBSCAN é utilizado em diversas aplicações, como:
+- Segmentação de imagens e análise de padrões em visão computacional.
+- Detecção de anomalias em sistemas de segurança e monitoramento.
+- Análise de dados geoespaciais, como agrupamento de localizações de crimes ou hotspots de tráfego.
+
+### Exemplo de Implementação em Python
+
+Abaixo, implementamos um exemplo de DBSCAN usando a biblioteca `scikit-learn` para agrupar um conjunto de dados bidimensional.
+```
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_moons
+from sklearn.cluster import DBSCAN
+
+# Gerando um conjunto de dados em formato de lua crescente (não linear)
+X, _ = make_moons(n_samples=300, noise=0.05, random_state=42)
+
+# Aplicando DBSCAN
+dbscan = DBSCAN(eps=0.2, min_samples=5)
+labels = dbscan.fit_predict(X)
+
+# Visualizando os clusters
+plt.figure(figsize=(8,5))
+plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='plasma', edgecolors='k')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Clusters Detectados pelo DBSCAN')
+plt.show()
+```
+### Resultado
+
+![image](https://github.com/user-attachments/assets/bf8b6fae-c4c8-4aa7-b31c-50f39ffedcf7)
+A imagem mostra os clusters detectados pelo algoritmo DBSCAN em um conjunto de dados no formato de duas luas crescentes (moons). Cada ponto representa uma amostra do conjunto de dados, e as cores indicam os diferentes clusters identificados.
+
+**Observação sobre os Clusters: 
+1. Clusters bem definidos:
+    - O DBSCAN conseguiu segmentar corretamente os dois grupos de pontos curvados, colorindo-os de maneira distinta (amarelo e azul escuro).
+    - Isso confirma que o algoritmo é eficiente para detectar estruturas não lineares, algo que algoritmos como K-Means teriam dificuldades em realizar.
+2. Ausência de ruídos (outliers):
+    - Nenhum ponto foi claramente identificado como ruído (normalmente indicado por uma cor diferente dos clusters principais, como preto ou cinza).
+    - Isso sugere que os parâmetros `eps=0.2` e `min_samples=5` foram bem ajustados para esse conjunto de dados, garantindo que todos os pontos fossem atribuídos a um cluster.
+3. Clusters de formas arbitrárias:
+    - Diferente do K-Means, que tende a criar grupos esféricos, o DBSCAN identificou os clusters de forma natural e arbitrária, respeitando a estrutura dos dados.
+4. Parâmetros e Sensibilidade:
+    - Se o valor de `eps` fosse maior, os dois grupos poderiam ter sido fundidos em um único cluster.
+    - Se `eps` fosse muito pequeno, mais pontos poderiam ter sido classificados como ruído.
+
+### Conclusão
+
+O DBSCAN funcionou muito bem para esse tipo de dado, segmentando corretamente as duas distribuições curvadas sem a necessidade de definir o número de clusters previamente. O resultado reforça a eficiência desse algoritmo para dados complexos e com formas irregulares.
+
+---
 
 ## Algoritmo de Aprendizado por reforço. 
