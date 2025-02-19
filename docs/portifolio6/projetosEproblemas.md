@@ -192,95 +192,217 @@ O DBSCAN funcionou muito bem para esse tipo de dado, segmentando corretamente as
 
 ---
 
-## Deep Q-Network (DQN)
+## Advantage Actor-Critic (A2C)
 
-O Deep Q-Network (DQN) é um algoritmo de Aprendizado por Reforço que combina a abordagem do Q-Learning com redes neurais profundas para resolver problemas complexos de tomada de decisão. Desenvolvido pelo Google DeepMind, o DQN ganhou notoriedade ao superar o desempenho humano em diversos jogos do Atari, sem precisar de conhecimento prévio sobre as regras.
+O **Advantage Actor-Critic (A2C)** é um algoritmo de Aprendizado por Reforço que combina as abordagens de **Aprendizado por Política (Actor)** e **Aprendizado por Valor (Critic)**. Ele busca melhorar a estabilidade e a eficiência do treinamento ao reduzir a variância das atualizações da política por meio da função de vantagem.
 
-### Como o DQN Funciona?
+### Como o A2C Funciona?
 
-O DQN utiliza uma rede neural para aproximar a função de valor de ação $Q(s, a)$, onde:
-- $s$ representa um estado do ambiente.
-- $a$ é uma ação possível nesse estado.
-- $Q(s, a)$ estima a recompensa esperada ao escolher a ação a no estado $s$.
+O A2C é baseado na arquitetura **Actor-Critic**, onde:
 
-O algoritmo segue as etapas principais:
-1. Inicialização: A rede neural recebe uma entrada representando o estado atual e produz saídas para cada possível ação.
-2. Exploração vs. Exploração: Utiliza a estratégia epsilon-greedy, onde o agente escolhe uma ação aleatória $(ε)$ ou segue a política $π(a | s) = argmax Q(s, a)$.
-3. Execução da ação: O agente interage com o ambiente e recebe uma recompensa $r$ e o novo estado $s'$.
-4. Armazenamento da experiência: A experiência $(s, a, r, s')$ é armazenada em um buffer de replay.
-5. Treinamento da rede: Amostras aleatórias do buffer são usadas para atualizar a função $Q(s, a)$, reduzindo a correlação entre as experiências.
-6. Atualização da rede-alvo: Uma segunda rede neural é usada para estabilizar o treinamento e evitar oscilações excessivas nos valores estimados.
+- **Actor (Ator)**: Responsável por selecionar ações com base em uma política parametrizada $pi(s, a)$.
+- **Critic (Crítico)**: Avalia o valor esperado de um estado $V(s)$ e calcula a **vantagem** $A(s, a)$, que mede o impacto da ação escolhida sobre a recompensa futura.
 
-### Vantagens e Aplicações do DQN
+O treinamento ocorre da seguinte maneira:
 
-O DQN possui várias vantagens em relação ao Q-Learning tradicional:
-- Lida com grandes espaços de estado: O uso de redes neurais permite aprender em ambientes com estados contínuos e de alta dimensionalidade.
-- Melhora a estabilidade do aprendizado: O buffer de replay e a rede-alvo ajudam a reduzir a variância e tornar o treinamento mais eficiente.
-- Aprimora o desempenho em problemas complexos: O DQN foi capaz de aprender estratégias eficazes para jogos complexos sem conhecimento prévio.
+1. O **Actor** escolhe uma ação $a$ com base na política atual $pi(s, a)$.
+2. O **Ambiente** retorna a recompensa $r$ e o próximo estado $s'$.
+3. O **Critic** estima os valores $V(s)$ e $V(s')$, calculando a vantagem:
+   
+   $$A(s, a) = r + \gamma V(s') - V(s)$$
+   
+4. O **Actor** é atualizado para maximizar a vantagem $A(s, a)$, enquanto o **Critic** é atualizado para minimizar o erro de predição $V(s) - (r + \gamma V(s'))$.
+5. O processo se repete até que a política do agente seja otimizada.
 
-O DQN é amplamente utilizado em diversas aplicações, incluindo:
-- Jogos eletrônicos: Controle de agentes autônomos em ambientes como Atari e StarCraft.
-- Robótica: Aprendizado de movimentação e manipulação de objetos.
-- Financeiro: Otimização de portfólios e estratégias de trading baseadas em decisões sequenciais.
+### Vantagens e Aplicações do A2C
+
+O A2C apresenta vários benefícios em relação a métodos tradicionais como o Q-Learning e o REINFORCE:
+
+- **Redução da variância**: O uso do Critic ajuda a estabilizar o aprendizado.
+- **Aprendizado eficiente**: O algoritmo pode ser treinado de forma paralela, acelerando a convergência.
+- **Adaptação a espaços contínuos**: Diferente do Q-Learning, o A2C pode lidar bem com ações contínuas, tornando-o ideal para aplicações como controle de robôs.
+
+As aplicações do A2C incluem:
+
+- **Controle Robótico**: Aprendizado de movimentos otimizados para robôs autônomos.
+- **Jogos**: Treinamento de agentes para jogos como Atari e StarCraft.
+- **Finanças**: Modelagem de estratégias de decisão para trading algorítimo.
 
 ### Exemplo de Implementação em Python
-Abaixo está uma implementação básica de um agente DQN utilizando `TensorFlow` e `Gym`.
-```
-import gym
+
+```python
 import numpy as np
-import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.optimizers import Adam
-from collections import deque
-import random
 
-# Criação do ambiente
-env = gym.make("CartPole-v1")
+import numpy as np
 
-# Parâmetros do DQN
-state_size = env.observation_space.shape[0]
-action_size = env.action_space.n
-learning_rate = 0.001
+class SimpleEnvironment:
+    def __init__(self):
+        self.state_space = 3  # 3 estados possíveis
+        self.action_space = 2  # 2 ações possíveis (0 ou 1)
+        self.state = 0  # Estado inicial
 
-def build_model():
-    model = Sequential([
-        Dense(24, activation='relu', input_shape=(state_size,)),
-        Dense(24, activation='relu'),
-        Dense(action_size, activation='linear')
-    ])
-    model.compile(loss='mse', optimizer=Adam(lr=learning_rate))
-    return model
+    def reset(self):
+        """Reseta o ambiente para o estado inicial."""
+        self.state = 0
+        return self.state
 
-# Criando a rede
-model = build_model()
+    def step(self, action):
+        """Executa uma ação no ambiente e retorna o novo estado e a recompensa."""
+        reward = 0
+        if action == 0:  # Ação 0 leva ao estado 1 com recompensa +1
+            self.state = 1
+            reward = 1
+        elif action == 1:  # Ação 1 leva ao estado 2 com recompensa -1
+            self.state = 2
+            reward = -1
+        return self.state, reward
 
-# Inicialização do buffer de replay
-dqn_replay = deque(maxlen=2000)
 
-# Treinamento do agente
-for episode in range(1000):
-    state = env.reset()
-    state = np.reshape(state, [1, state_size])
-    done = False
-    total_reward = 0
-    
-    while not done:
-        action = np.argmax(model.predict(state)) if np.random.rand() > 0.1 else env.action_space.sample()
-        next_state, reward, done, _ = env.step(action)
-        next_state = np.reshape(next_state, [1, state_size])
-        dqn_replay.append((state, action, reward, next_state, done))
-        state = next_state
-        total_reward += reward
-    
-    print(f"Episódio {episode}: Recompensa {total_reward}")
+class ActorCritic:
+    def __init__(self, state_space, action_space, alpha=0.01, gamma=0.99, lambda_=0.95):
+        """Inicializa o agente A2C com os parâmetros dados."""
+        self.state_space = state_space
+        self.action_space = action_space
+        self.alpha = alpha  # Taxa de aprendizado
+        self.gamma = gamma  # Fator de desconto
+        self.lambda_ = lambda_  # Fator de trace de elegibilidade
+
+        # Inicializa os parâmetros do ator (política) e crítico (valor)
+        self.theta = np.random.rand(state_space, action_space)  # Parâmetros do ator
+        self.weights = np.random.rand(state_space)  # Parâmetros do crítico
+
+        # Inicializa os traces de elegibilidade
+        self.e_trace = np.zeros_like(self.weights)
+
+    def softmax(self, x):
+        """Função Softmax para calcular probabilidades de ação."""
+        e_x = np.exp(x - np.max(x))  # Evitar overflow numérico
+        return e_x / e_x.sum(axis=0, keepdims=True)
+
+    def choose_action(self, state):
+        """Escolhe uma ação com base na política atual (distribuição softmax)."""
+        action_probabilities = self.softmax(self.theta[state, :])
+        return np.random.choice(self.action_space, p=action_probabilities)
+
+    def update(self, state, action, reward, next_state, done):
+        """Atualiza os parâmetros do ator e crítico com base nas transições."""
+        v = self.weights[state]  # Valor atual do estado
+        v_next = self.weights[next_state] if not done else 0  # Valor do próximo estado
+
+        # Calcula o erro temporal (TD error)
+        td_error = reward + self.gamma * v_next - v
+        
+        # Atualiza o crítico (valores estimados dos estados)
+        self.weights[state] += self.alpha * td_error
+        
+        # Atualiza o trace de elegibilidade
+        self.e_trace[state] = self.gamma * self.lambda_ * self.e_trace[state] + 1
+
+        # Atualiza o ator (política)
+        action_probabilities = self.softmax(self.theta[state, :])
+        self.theta[state, action] += self.alpha * td_error * self.e_trace[state] * (1 - action_probabilities[action])
+
+    def train(self, env, episodes=100):
+        """Treina o agente em um número de episódios."""
+        for episode in range(episodes):
+            state = env.reset()
+            done = False
+            total_reward = 0
+            
+            while not done:
+                # Escolhe a ação a ser tomada
+                action = self.choose_action(state)
+                
+                # Realiza a ação no ambiente e recebe o próximo estado e a recompensa
+                next_state, reward = env.step(action)
+                
+                # Atualiza os parâmetros do agente (ator e crítico)
+                self.update(state, action, reward, next_state, done)
+                
+                state = next_state
+                total_reward += reward
+                done = (state == 2)  # O episódio termina quando o estado 2 é alcançado
+
+            print(f"Episode {episode + 1}: Total Reward: {total_reward}")
+
+# Cria o ambiente simples
+env = SimpleEnvironment()
+
+# Cria o agente A2C
+agent = ActorCritic(state_space=env.state_space, action_space=env.action_space)
+
+# Treina o agente por 100 episódios
+agent.train(env, episodes=100)
+
 ```
+**Explicação do código:
+
+1. Ambiente Simples: O ambiente tem 3 estados possíveis (0, 1 e 2) e 2 ações possíveis (0 e 1). O estado inicial é 0.
+    - Se o agente escolhe a ação 0, ele vai para o estado 1 e recebe uma recompensa de +1.
+    - Se o agente escolhe a ação 1, ele vai para o estado 2 e recebe uma recompensa de -1.
+  
+2. Agente A2C: O agente usa o algoritmo Actor-Critic para aprender uma política (ação a ser tomada) e um valor (o valor de cada estado).
+    - O ator escolhe ações com base em uma política probabilística (usando softmax).
+    - O crítico avalia o valor dos estados.
+    - O agente é treinado para maximizar a recompensa total e minimizar o erro temporal (TD error).
+
+3. Treinamento: O agente é treinado por 30 episódios, e ao final de cada episódio, a recompensa total é registrada.
 
 ### Resultado
 
+Agora, vamos olhar a tabela de resultados:
+| Episode | Total Reward |
+|---------|--------------|
+| 1       | 1            |
+| 2       | 0            |
+| 3       | 0            |
+| 4       | 0            |
+| 5       | 1            |
+| 6       | 0            |
+| 7       | 3            |
+| 8       | 6            |
+| 9       | 2            |
+| 10      | -1           |
+| 11      | -1           |
+| 12      | -1           |
+| 13      | 5            |
+| 14      | -1           |
+| 15      | 2            |
+| 16      | -1           |
+| 17      | 5            |
+| 18      | 8            |
+| 19      | 10           |
+| 20      | 7            |
+| 21      | -1           |
+| 22      | -1           |
+| 23      | 14           |
+| 24      | 58           |
+| 25      | -1           |
+| 26      | 4            |
+| 27      | 1            |
+| 28      | -1           |
+| 29      | -1           |
+| 30      | 26           |
+
+**Observações**:
+- Comportamento Inicial: Nos primeiros episódios, as recompensas são instáveis. O agente explora o ambiente e começa a aprender a política que maximiza a recompensa.
+- Flutuação nas Recompensas: O agente começa com valores de recompensa baixos ou zero em muitos episódios, mas rapidamente começa a encontrar estratégias que geram recompensas maiores.
+- Picos de Recompensa: A partir do episódio 17, há um aumento notável nas recompensas. Isso pode ser explicado pelo agente aprendendo e ajustando sua política, alcançando resultados mais eficazes.
+- Episódio 24: O valor de recompensa de 58 no episódio 24 é uma grande discrepância. Isso pode indicar que o agente encontrou uma sequência de ações que geraram uma recompensa substancial. O fato de ser tão alto sugere que o agente pode ter começado a se comportar de forma mais otimizada.
+- Oscilação nos Últimos Episódios: Nos episódios 25 a 29, o agente parece ter uma oscilação nas recompensas, retornando a valores negativos e depois estabilizando em torno de 26 no episódio 30. Isso pode indicar que o agente ainda está ajustando sua política.
+
+**O que significa:**
+1. Aprendizado do Agente: O agente está aprendendo uma política eficaz, mas, como em muitos algoritmos de aprendizado por reforço, ele precisa de exploração para encontrar boas ações. No início, ele tenta diferentes ações e seus resultados flutuam bastante. À medida que o treinamento avança, ele começa a otimizar suas decisões, resultando em recompensas mais altas.
+2. Comportamento de Exploração e Exploração: Nos primeiros episódios, o agente explora várias ações, o que resulta em muitas recompensas negativas. À medida que ele aprende, ele começa a explorar menos e a explorar mais ações que oferecem boas recompensas.
+3. Convergência da Política: Após várias iterações, o agente se aproxima de uma política que maximiza suas recompensas, como mostrado pelos picos nos episódios 17 a 24.
+
+**Gráfico:**
+![image](https://github.com/user-attachments/assets/ba62369f-1f87-4a5e-bc47-839447116a25)
+O gráfico gerado pelo código mostra a variação das recompensas por episódio. Se você olhar para ele, provavelmente verá um aumento gradual das recompensas, com algumas flutuações e picos mais altos. Isso é um reflexo direto da melhora da política do agente ao longo do tempo.
 
 ### Conclusão
 
-O Deep Q-Network revolucionou o Aprendizado por Reforço ao integrar redes neurais ao Q-Learning, permitindo resolver problemas complexos com grande espaço de estados. Sua aplicação em jogos, robótica e finanças demonstra sua versatilidade e potencial para tomada de decisão autônoma.
+O **Advantage Actor-Critic (A2C)** é um algoritmo poderoso que combina os benefícios do aprendizado baseado em política e em valor, oferecendo uma solução mais estável e eficiente para problemas de decisão sequencial. Seu uso em robótica, jogos e finanças demonstra seu grande potencial na tomada de decisão autônoma.
+
 
 ---
