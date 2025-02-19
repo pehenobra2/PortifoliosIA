@@ -106,6 +106,10 @@ Essa imagem representa a regressão com Processo Gaussiano (GP) aplicada a um co
     - O intervalo de confiança se comporta como esperado, expandindo-se nas regiões com menos dados e estreitando-se onde há mais observações.
     - A escolha do kernel foi adequada, pois conseguiu lidar bem com a variação dos dados e modelar o ruído presente.
 
+### Conclusão
+
+Os Processos Gaussianos são ferramentas poderosas para modelagem probabilística e são amplamente utilizados em problemas que exigem previsões confiáveis e quantificação da incerteza. A flexibilidade desses modelos permite aplicações variadas, desde regressão até otimização de hiperparâmetros em algoritmos de aprendizado de máquina.
+
 ---
 
 ## Algoritmo de Aprendizado não supervisionado; 
