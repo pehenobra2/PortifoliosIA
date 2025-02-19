@@ -35,15 +35,15 @@ Utilizaremos a biblioteca `scikit-learn` para implementar um **GP para regressã
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.gaussian_process import GaussianProcessRegressor
-from sklearn.gaussian_process.kernels import RBF, ConstantKernel as C
+from sklearn.gaussian_process.kernels import RBF, WhiteKernel, Matern, ConstantKernel as C
 
-# Gerando dados de exemplo (função seno com ruído)
+# Gerando mais dados para reduzir incerteza
 np.random.seed(42)
-X = np.sort(5 * np.random.rand(20, 1), axis=0)  # 20 pontos aleatórios entre 0 e 5
-y = np.sin(X).ravel() + np.random.normal(0, 0.2, X.shape[0])  # Adicionando ruído
+X = np.sort(5 * np.random.rand(40, 1), axis=0)  # 40 pontos (antes eram 20)
+y = np.sin(X).ravel() + np.random.normal(0, 0.15, X.shape[0])  # Redução do ruído
 
-# Criando o kernel (RBF + constante)
-kernel = C(1.0) * RBF(length_scale=1.0)
+# Melhorando o kernel: Matérn + WhiteKernel para melhor modelagem de ruído
+kernel = C(1.0) * Matern(length_scale=1.0, nu=1.5) + WhiteKernel(noise_level=0.1)
 
 # Criando o modelo de Processo Gaussiano
 gp = GaussianProcessRegressor(kernel=kernel, n_restarts_optimizer=10)
@@ -63,9 +63,13 @@ plt.plot(X_pred, y_pred, "b-", label="Previsão GP")
 plt.fill_between(X_pred.ravel(), y_pred - 1.96 * sigma, y_pred + 1.96 * sigma, alpha=0.2, color="blue", label="Intervalo de Confiança (95%)")
 plt.xlabel("X")
 plt.ylabel("y")
-plt.title("Regressão com Processo Gaussiano")
+plt.title("Regressão com Processo Gaussiano (Aprimorado)")
 plt.legend()
 plt.show()
+
+# Exibir os hiperparâmetros aprendidos pelo modelo
+print("Kernel otimizado:", gp.kernel_)
+
 ```
 **Explicação do Código**:
 1. Geração de dados: Criamos uma função seno com ruído para simular um problema real.
@@ -76,7 +80,20 @@ plt.show()
     - Pontos vermelhos representando os dados de treino.
     - Linha azul mostrando a predição do GP.
     - Sombra azul representando a incerteza do modelo (intervalo de confiança de 95%).
-  
+
+### Resultado
+
+![image](https://github.com/user-attachments/assets/5647a620-5e6d-4803-bdf0-445679d97715)
+
+
+Essa imagem representa a regressão com Processo Gaussiano (GP) aplicada a um conjunto de dados ruidoso. Vamos analisar os elementos principais do gráfico:
+
+1. **Dados de Treinamento (pontos vermelhos)
+2. Função Real (linha vermelha tracejada)
+3. Previsão do GP (linha azul sólida)
+4. Intervalo de Confiança (faixa azul clara)
+
+
 ---
 
 ## Algoritmo de Aprendizado não supervisionado; 
