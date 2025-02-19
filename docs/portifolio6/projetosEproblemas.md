@@ -280,5 +280,7 @@ for episode in range(1000):
 
 
 ### Conclusão
+
 O Deep Q-Network revolucionou o Aprendizado por Reforço ao integrar redes neurais ao Q-Learning, permitindo resolver problemas complexos com grande espaço de estados. Sua aplicação em jogos, robótica e finanças demonstra sua versatilidade e potencial para tomada de decisão autônoma.
+
 ---
