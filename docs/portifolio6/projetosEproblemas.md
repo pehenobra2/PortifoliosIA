@@ -67,7 +67,16 @@ plt.title("Regressão com Processo Gaussiano")
 plt.legend()
 plt.show()
 ```
-
+**Explicação do Código**:
+1. Geração de dados: Criamos uma função seno com ruído para simular um problema real.
+2. Definição do kernel: Usamos o kernel RBF multiplicado por uma constante. Isso permite que o modelo ajuste a variância e a suavidade da curva.
+3. Treinamento: Ajustamos o GaussianProcessRegressor aos dados.
+4. Predição: Fazemos previsões em novos pontos e obtemos o desvio padrão da incerteza.
+5. Visualização: Geramos um gráfico com:
+    - Pontos vermelhos representando os dados de treino.
+    - Linha azul mostrando a predição do GP.
+    - Sombra azul representando a incerteza do modelo (intervalo de confiança de 95%).
+  
 ---
 
 ## Algoritmo de Aprendizado não supervisionado; 
