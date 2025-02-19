@@ -1,4 +1,4 @@
-# APRENDIZADO DE MÁQUINA
+# Aprendizado de Máquina
 
 O Aprendizado de Máquina (Machine Learning) é um campo da Inteligência Artificial (IA) que se dedica ao desenvolvimento de sistemas capazes de aprender a partir de dados e aprimorar seu desempenho ao longo do tempo, sem a necessidade de programação explícita para cada situação. Em vez de depender de um conjunto fixo de regras predefinidas, os modelos de aprendizado de máquina identificam padrões, fazem previsões e ajustam seus resultados à medida que recebem novos dados, tornando-se mais precisos e eficientes.
 
@@ -8,7 +8,7 @@ O avanço dessa tecnologia tem sido impulsionado pelo crescimento exponencial da
 
 ---
 
-# TIPOS DE APRENDIZADO DE MÁQUINA
+# Tipos de Aprendizado de Máquina
 
 O Aprendizado de Máquina pode ser classificado em três principais categorias, dependendo da forma como os dados são utilizados para treinar os modelos: aprendizado supervisionado, aprendizado não supervisionado e aprendizado por reforço. Cada uma dessas categorias possui características específicas e é aplicada a diferentes problemas.
 
@@ -110,6 +110,7 @@ onde:
 Os classificadores bayesianos são amplamente utilizados em aplicações como **filtragem de spam**, **análise de sentimentos** e **reconhecimento de padrões**. Apesar de sua simplicidade, o Naïve Bayes pode obter resultados surpreendentemente bons em problemas de classificação, especialmente quando os dados seguem distribuições bem definidas.  
 
 ---
+
 # Redes Neurais e aprendizado profundo
 
 As Redes Neurais (RNs) são sistemas computacionais inspirados no funcionamento do cérebro humano, desenvolvidos para executar tarefas cognitivas como reconhecimento de padrões, percepção e controle motor. Esses modelos são baseados nos neurônios biológicos, que estão organizados de maneira eficiente para processar informações de forma paralela e não linear. Segundo Haykin (2001), o cérebro humano organiza seus neurônios de maneira que permite a execução de tarefas complexas de forma mais rápida e eficiente do que sistemas computacionais tradicionais. As RNs buscam emular essa estrutura, utilizando componentes eletrônicos ou programas de computador para realizar funções semelhantes às do cérebro (NETO, 2015).
