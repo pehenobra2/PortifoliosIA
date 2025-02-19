@@ -1,6 +1,6 @@
 # Algoritmos de Aprendizado de máquina
 
-Ao longo deste documento, foram discutidos diversos algoritmos representativos para cada tipo de aprendizado de máquina: supervisionado, não supervisionado e por reforço. No entanto, o universo de algoritmos de aprendizado de máquina é extenso, e há muitas outras técnicas relevantes. Nesta seção, serão explorados novos algoritmos para cada tipo de aprendizado, oferecendo uma visão mais abrangente das possibilidades disponíveis no campo.
+Os Processos Gaussianos (Gaussian Processes - GP) são modelos probabilísticos amplamente utilizados para tarefas de regressão e classificação no contexto do aprendizado supervisionado. Baseados em estatísticas bayesianas, eles permitem capturar a incerteza das previsões de forma natural, tornando-se uma escolha poderosa para problemas em que a quantificação da incerteza é essencial.
 
 ## Processos Gaussianos (GP) para Aprendizado de Máquina
 
@@ -26,9 +26,7 @@ Os Processos Gaussianos são úteis para:
 ### **Exemplo de Aplicação: Regressão com Processos Gaussianos**  
 Vamos considerar um exemplo onde ajustamos um GP a um conjunto de dados ruidoso e fazemos previsões para novos pontos.  
 
----
-
-### **Código em Python**  
+#### **Código em Python**  
 Utilizaremos a biblioteca `scikit-learn` para implementar um **GP para regressão (Gaussian Process Regression - GPR)**.
 
 ```python
@@ -73,26 +71,40 @@ print("Kernel otimizado:", gp.kernel_)
 ```
 **Explicação do Código**:
 1. Geração de dados: Criamos uma função seno com ruído para simular um problema real.
-2. Definição do kernel: Usamos o kernel RBF multiplicado por uma constante. Isso permite que o modelo ajuste a variância e a suavidade da curva.
+2. Definição do kernel: Utilizamos um kernel Matérn somado a um WhiteKernel, permitindo que o modelo lide melhor com variações e ruídos nos dados.
 3. Treinamento: Ajustamos o `GaussianProcessRegressor` aos dados.
-4. Predição: Fazemos previsões em novos pontos e obtemos o desvio padrão da incerteza.
+4. Predição: Realizamos previsões em novos pontos e obtemos o desvio padrão da incerteza.
 5. Visualização: Geramos um gráfico com:
-    - Pontos vermelhos representando os dados de treino.
-    - Linha azul mostrando a predição do GP.
-    - Sombra azul representando a incerteza do modelo (intervalo de confiança de 95%).
+    - Pontos vermelhos: Dados de treinamento.
+    - Linha azul: Predição do GP.
+    - Área sombreada azul: Intervalo de confiança de 95%..
 
 ### Resultado
 
 ![image](https://github.com/user-attachments/assets/5647a620-5e6d-4803-bdf0-445679d97715)
 
-
 Essa imagem representa a regressão com Processo Gaussiano (GP) aplicada a um conjunto de dados ruidoso. Vamos analisar os elementos principais do gráfico:
 
-1. **Dados de Treinamento (pontos vermelhos)
-2. Função Real (linha vermelha tracejada)
-3. Previsão do GP (linha azul sólida)
-4. Intervalo de Confiança (faixa azul clara)
-
+1. **Dados de Treinamento**
+    - Os pontos vermelhos representam os dados de treinamento, que foram gerados a partir de uma função seno com adição de ruído gaussiano.
+    - O conjunto de dados apresenta uma boa distribuição ao longo do domínio, garantindo que o modelo GP possa capturar o comportamento subjacente da função real.
+2. Função Real
+    - A linha vermelha tracejada representa a função real utilizada para gerar os dados.
+    - Isso serve como referência para avaliar a precisão da previsão do modelo GP.
+3. Previsão do GP
+    - A linha azul sólida representa a predição feita pelo Gaussian Process Regressor.
+    - O modelo conseguiu capturar bem a tendência da função real, mantendo uma suavização adequada devido ao kernel Matérn utilizado.
+4. Intervalo de Confiança (95%)
+    - A região azul ao redor da linha de previsão representa o intervalo de confiança de 95%.
+    - Em áreas onde há mais dados, o intervalo é menor, indicando menor incerteza.
+    - Em regiões com menos dados (especialmente nas extremidades), a incerteza aumenta, como esperado em modelos probabilísticos.
+5. Melhorias Aplicadas
+    - Em comparação com uma versão mais básica do GP, este modelo usa um kernel Matérn `+ WhiteKernel`, que melhora a modelagem da variação e do ruído nos dados.
+    - O aumento da quantidade de pontos de treinamento (40 pontos em vez de 20) ajudou a reduzir a incerteza e melhorar a precisão das previsões.
+6. Interpretação Final
+    - O modelo GP fez um ótimo ajuste à função real, demonstrando sua capacidade de capturar padrões complexos sem assumir uma forma fixa para a função subjacente.
+    - O intervalo de confiança se comporta como esperado, expandindo-se nas regiões com menos dados e estreitando-se onde há mais observações.
+    - A escolha do kernel foi adequada, pois conseguiu lidar bem com a variação dos dados e modelar o ruído presente.
 
 ---
 
