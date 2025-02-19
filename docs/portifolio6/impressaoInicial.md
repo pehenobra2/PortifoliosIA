@@ -1,4 +1,4 @@
-# Introduçao
+# Impressão Inicial
 
 Este conteúdo oferece uma introdução abrangente ao Aprendizado de Máquina (Machine Learning), abordando suas principais técnicas e conceitos. O aprendizado de máquina permite que algoritmos aprendam com dados, sem necessidade de programação explícita. São discutidos três tipos principais de aprendizado: supervisionado, onde o modelo é treinado com dados rotulados; não supervisionado, que busca identificar padrões em dados não rotulados; e por reforço, onde um agente aprende a tomar decisões por meio de interação com o ambiente.
 
