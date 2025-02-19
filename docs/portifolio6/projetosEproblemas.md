@@ -192,4 +192,93 @@ O DBSCAN funcionou muito bem para esse tipo de dado, segmentando corretamente as
 
 ---
 
-## Algoritmo de Aprendizado por reforço. 
+## Deep Q-Network (DQN)
+
+O Deep Q-Network (DQN) é um algoritmo de Aprendizado por Reforço que combina a abordagem do Q-Learning com redes neurais profundas para resolver problemas complexos de tomada de decisão. Desenvolvido pelo Google DeepMind, o DQN ganhou notoriedade ao superar o desempenho humano em diversos jogos do Atari, sem precisar de conhecimento prévio sobre as regras.
+
+### Como o DQN Funciona?
+
+O DQN utiliza uma rede neural para aproximar a função de valor de ação $Q(s, a)$, onde:
+- $s$ representa um estado do ambiente.
+- $a$ é uma ação possível nesse estado.
+- $Q(s, a)$ estima a recompensa esperada ao escolher a ação a no estado $s$.
+
+O algoritmo segue as etapas principais:
+1. Inicialização: A rede neural recebe uma entrada representando o estado atual e produz saídas para cada possível ação.
+2. Exploração vs. Exploração: Utiliza a estratégia epsilon-greedy, onde o agente escolhe uma ação aleatória $(ε)$ ou segue a política $π(a | s) = argmax Q(s, a)$.
+3. Execução da ação: O agente interage com o ambiente e recebe uma recompensa $r$ e o novo estado $s'$.
+4. Armazenamento da experiência: A experiência $(s, a, r, s')$ é armazenada em um buffer de replay.
+5. Treinamento da rede: Amostras aleatórias do buffer são usadas para atualizar a função $Q(s, a)$, reduzindo a correlação entre as experiências.
+6. Atualização da rede-alvo: Uma segunda rede neural é usada para estabilizar o treinamento e evitar oscilações excessivas nos valores estimados.
+
+### Vantagens e Aplicações do DQN
+
+O DQN possui várias vantagens em relação ao Q-Learning tradicional:
+- Lida com grandes espaços de estado: O uso de redes neurais permite aprender em ambientes com estados contínuos e de alta dimensionalidade.
+- Melhora a estabilidade do aprendizado: O buffer de replay e a rede-alvo ajudam a reduzir a variância e tornar o treinamento mais eficiente.
+- Aprimora o desempenho em problemas complexos: O DQN foi capaz de aprender estratégias eficazes para jogos complexos sem conhecimento prévio.
+
+O DQN é amplamente utilizado em diversas aplicações, incluindo:
+- Jogos eletrônicos: Controle de agentes autônomos em ambientes como Atari e StarCraft.
+- Robótica: Aprendizado de movimentação e manipulação de objetos.
+- Financeiro: Otimização de portfólios e estratégias de trading baseadas em decisões sequenciais.
+
+### Exemplo de Implementação em Python
+Abaixo está uma implementação básica de um agente DQN utilizando `TensorFlow` e `Gym`.
+```
+import gym
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.optimizers import Adam
+from collections import deque
+import random
+
+# Criação do ambiente
+env = gym.make("CartPole-v1")
+
+# Parâmetros do DQN
+state_size = env.observation_space.shape[0]
+action_size = env.action_space.n
+learning_rate = 0.001
+
+def build_model():
+    model = Sequential([
+        Dense(24, activation='relu', input_shape=(state_size,)),
+        Dense(24, activation='relu'),
+        Dense(action_size, activation='linear')
+    ])
+    model.compile(loss='mse', optimizer=Adam(lr=learning_rate))
+    return model
+
+# Criando a rede
+model = build_model()
+
+# Inicialização do buffer de replay
+dqn_replay = deque(maxlen=2000)
+
+# Treinamento do agente
+for episode in range(1000):
+    state = env.reset()
+    state = np.reshape(state, [1, state_size])
+    done = False
+    total_reward = 0
+    
+    while not done:
+        action = np.argmax(model.predict(state)) if np.random.rand() > 0.1 else env.action_space.sample()
+        next_state, reward, done, _ = env.step(action)
+        next_state = np.reshape(next_state, [1, state_size])
+        dqn_replay.append((state, action, reward, next_state, done))
+        state = next_state
+        total_reward += reward
+    
+    print(f"Episódio {episode}: Recompensa {total_reward}")
+```
+
+### Resultado
+
+
+### Conclusão
+O Deep Q-Network revolucionou o Aprendizado por Reforço ao integrar redes neurais ao Q-Learning, permitindo resolver problemas complexos com grande espaço de estados. Sua aplicação em jogos, robótica e finanças demonstra sua versatilidade e potencial para tomada de decisão autônoma.
+---
